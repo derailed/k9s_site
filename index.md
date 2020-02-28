@@ -95,7 +95,6 @@ K9s is a terminal based UI to interact with your Kubernetes clusters. The aim of
 * <i class="fab fa-slack"/>  [K9ers Slack](https://k9sers.slack.com/)
 * <i class="fab fa-slack-hash"/> [K9ers Slack Invite](https://join.slack.com/t/k9sers/shared_invite/enQtOTA5MDEyNzI5MTU0LWQ1ZGI3MzliYzZhZWEyNzYxYzA3NjE0YTk1YmFmNzViZjIyNzhkZGI0MmJjYzhlNjdlMGJhYzE2ZGU1NjkyNTM)
 
-
 <br/>
 
 ## <i class="fas fa-bullhorn"></i> Sponsorships
@@ -110,7 +109,7 @@ This is still work in progress! If there is enough interest in the Kubernetes co
 
 <br/>
 
-## <i class="fas fa-handshake"></i> ATTA Girls/Boys!
+## <i class="fas fa-thumbs-up"></i> ATTA Girls/Boys!
 
 K9s sits on top of many open source projects and libraries. Our *sincere* appreciations to all the OSS contributors that work nights and weekends to make this project a reality!
 
