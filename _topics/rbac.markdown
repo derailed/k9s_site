@@ -2,7 +2,7 @@
 layout: section
 ---
 
-[<img src="/assets/reading.png" align="right" width="128" height="auto"/>](/lessons/agenda)
+[<img src="/assets/sections/wolf.png" align="right" width="128" height="auto"/>](/lessons/agenda)
 
 <br/>
 <br/>
@@ -19,14 +19,16 @@ On RBAC enabled clusters, you would need to give your users/groups capabilities 
 
 These rules below are just suggestions. You will need to customize them based on your environment policies. If you need to edit/delete resources extra Fu will be necessary.
 
-> NOTE! Cluster/Namespace access may change in the future as K9s evolves.
-> NOTE! We expect K9s to keep running even in atrophied clusters/namespaces. Please file issues if this is not the case!
 
+<br/>
+<div class="note">
+  <i class="fas fa-skull"></i> Cluster/Namespace access may change in the future as K9s evolves.
+</div>
 
 <br/>
 
 ---
-## <img src="/assets/sections/examples.png" width="auto" height="32"/> Example
+## <img src="/assets/sections/examples.png" width="auto" height="32"/> ClusterRole
 
 ```yaml
 ---
@@ -69,7 +71,7 @@ roleRef:
   apiGroup: rbac.authorization.k8s.io
 ```
 
-### Namespace RBAC scope
+## <img src="/assets/sections/examples.png" width="auto" height="32"/> Role
 
 If your users are constrained to certain namespaces, K9s will need to following role to enable read access to namespaced resources.
 

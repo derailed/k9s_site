@@ -65,6 +65,7 @@ K9s is a terminal based UI to interact with your Kubernetes clusters. The aim of
     * [Skins]({{ "/topics/skins" }})
     * [Resource Columns]({{ "/topics/columns" }})
   * <i class="fas fa-tachometer-alt"/> [Benchmarking]({{ "/topics/bench" }})
+  * <i class="fas fa-key"/> [RBAC]({{ "/topics/rbac" }})
 
 
 <br/>
@@ -86,7 +87,7 @@ K9s is a terminal based UI to interact with your Kubernetes clusters. The aim of
 
 <br/>
 
-## <i class="fas fa-bullhorn"></i> Contact Us
+## <i class="fas fa-phone-volume"></i> Contact Us
 
 * <i class="fas fa-at"/>  [Fernand Galiana](mailto://{{ site.email }})
 * <i class="fab fa-twitter"/> [@{{ site.twitter }}](https://twitter.com/{{ site.twitter }}?lang=en)
@@ -94,17 +95,22 @@ K9s is a terminal based UI to interact with your Kubernetes clusters. The aim of
 * <i class="fab fa-slack"/>  [K9ers Slack](https://k9sers.slack.com/)
 * <i class="fab fa-slack-hash"/> [K9ers Slack Invite](https://join.slack.com/t/k9sers/shared_invite/enQtOTA5MDEyNzI5MTU0LWQ1ZGI3MzliYzZhZWEyNzYxYzA3NjE0YTk1YmFmNzViZjIyNzhkZGI0MmJjYzhlNjdlMGJhYzE2ZGU1NjkyNTM)
 
-<br/>
-
----
-## Disclaimer
-
-This is still work in progress! If there is enough interest in the Kubernetes community, we will enhance per your recommendations/contributions. Also if you dig this effort, consider clicking the Github Sponsor button on the K9s repo, or simply give us a shoot-out on social as these goes a long way in keeping our batteries charged up!
 
 <br/>
 
----
-## ATTA Girls/Boys!
+## <i class="fas fa-bullhorn"></i> Sponsorships
+
+If you dig this effort, consider clicking the Sponsor button on the K9s Github repository, or just simply give us a shoot-out on social as these goes a long way in keeping our batteries charged!!
+
+<br/>
+
+## <i class="fas fa-exclamation-triangle"></i> Disclaimer
+
+This is still work in progress! If there is enough interest in the Kubernetes community, we will enhance per your recommendations/contributions.
+
+<br/>
+
+## <i class="fas fa-handshake"></i> ATTA Girls/Boys!
 
 K9s sits on top of many open source projects and libraries. Our *sincere* appreciations to all the OSS contributors that work nights and weekends to make this project a reality!
 
