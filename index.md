@@ -54,18 +54,18 @@ K9s is a terminal based UI to interact with your Kubernetes clusters. The aim of
 ## <i class="fas fa-book"/> Documentation
 
   * <i class="fas fa-toolbox"/> [Installation]({{ "/topics/install" }})
-  * <i class="fas fa-terminal"/> Customization
+  * <i class="fas fa-terminal"/> [Commands]({{ "/topics/commands" }})
+  * <i class="fas fa-car"/> Custom Feel
     * [K9s]({{ "/topics/config" }})
     * [Aliases]({{ "/topics/aliases" }})
     * [HotKeys]({{ "/topics/hotkeys" }})
     * [Plugins]({{ "/topics/plugins" }})
-  * <i class="fas fa-terminal"/> [Commands]({{ "/topics/commands" }})
-  * <i class="fas fa-video"/> [Videos]({{ "/topics/video" }})
-  * <i class="fas fa-tv"/> Customization
+  * <i class="fas fa-swatchbook"></i> Custom Look
     * [Skins]({{ "/topics/skins" }})
     * [Resource Columns]({{ "/topics/columns" }})
   * <i class="fas fa-tachometer-alt"/> [Benchmarking]({{ "/topics/bench" }})
   * <i class="fas fa-key"/> [RBAC]({{ "/topics/rbac" }})
+  * <i class="fas fa-video"/> [Tutorials]({{ "/topics/video" }})
 
 
 <br/>
@@ -87,7 +87,7 @@ K9s is a terminal based UI to interact with your Kubernetes clusters. The aim of
 
 <br/>
 
-## <i class="fas fa-phone-volume"></i> Contact Us
+## <i class="fas fa-phone-volume"></i> Get In Touch!
 
 * <i class="fas fa-at"/>  [Fernand Galiana](mailto://{{ site.email }})
 * <i class="fab fa-twitter"/> [@{{ site.twitter }}](https://twitter.com/{{ site.twitter }}?lang=en)
@@ -97,9 +97,9 @@ K9s is a terminal based UI to interact with your Kubernetes clusters. The aim of
 
 <br/>
 
-## <i class="fas fa-bullhorn"></i> Sponsorships
+## <i class="fas fa-bullhorn"></i> Sponsor Us!
 
-If you dig this effort, consider clicking the Sponsor button on the K9s Github repository, or just simply give us a shoot-out on social as these goes a long way in keeping our batteries charged!!
+If you dig this effort, consider clicking the Sponsor button on the K9s Github repository, or just simply give us a shoot-out on social as these go a long way in keeping our batteries charged up!!
 
 <br/>
 

@@ -2,7 +2,7 @@
 layout: section
 ---
 
-[<img src="/assets/sections/reading.png" align="right" width="128" height="auto"/>](/lessons/agenda)
+[<img src="/assets/sections/fox.png" align="right" width="128" height="auto"/>](/lessons/agenda)
 
 <br/>
 <br/>
