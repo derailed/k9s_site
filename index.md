@@ -10,6 +10,8 @@ layout: site
 
 K9s is a terminal based UI to interact with your Kubernetes clusters. The aim of this project is to make it easier to navigate, observe and manage your deployed applications in the wild. K9s continually watches Kubernetes for changes and offers subsequent commands to interact with your observed resources.
 
+<br/>
+
 ## <i class="fas fa-highlighter"/> Features
 
 - Information At Your Finger Tips!
@@ -55,14 +57,15 @@ K9s is a terminal based UI to interact with your Kubernetes clusters. The aim of
 
   * <i class="fas fa-toolbox"/> [Installation]({{ "/topics/install" }})
   * <i class="fas fa-terminal"/> [Commands]({{ "/topics/commands" }})
-  * <i class="fas fa-car"/> Custom Feel
-    * [K9s]({{ "/topics/config" }})
-    * [Aliases]({{ "/topics/aliases" }})
-    * [HotKeys]({{ "/topics/hotkeys" }})
-    * [Plugins]({{ "/topics/plugins" }})
-  * <i class="fas fa-swatchbook"></i> Custom Look
-    * [Skins]({{ "/topics/skins" }})
-    * [Resource Columns]({{ "/topics/columns" }})
+  * <i class="fas fa-car"/> Customizations
+    * Feel
+      * [K9s]({{ "/topics/config" }})
+      * [Aliases]({{ "/topics/aliases" }})
+      * [HotKeys]({{ "/topics/hotkeys" }})
+      * [Plugins]({{ "/topics/plugins" }})
+    * Look
+      * [Skins]({{ "/topics/skins" }})
+      * [Resource Columns]({{ "/topics/columns" }})
   * <i class="fas fa-tachometer-alt"/> [Benchmarking]({{ "/topics/bench" }})
   * <i class="fas fa-key"/> [RBAC]({{ "/topics/rbac" }})
   * <i class="fas fa-video"/> [Tutorials]({{ "/topics/video" }})
