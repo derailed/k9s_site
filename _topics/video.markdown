@@ -2,7 +2,7 @@
 layout: section
 ---
 
-[<img src="/assets/sections/butterfly.png" align="right" width="200" height="auto"/>](/)
+[<img src="/assets/k9s.png" align="right" width="200" height="auto"/>](/)
 
 <br/>
 <br/>

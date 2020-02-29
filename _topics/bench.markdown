@@ -2,7 +2,7 @@
 layout: section
 ---
 
-[<img src="/assets/sections/howl.png" align="right" width="256" height="auto"/>](/)
+<i class="icon fas fa-tachometer-alt fa-7x"></i>
 
 <br/>
 <br/>

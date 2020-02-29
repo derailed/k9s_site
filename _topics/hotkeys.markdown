@@ -2,7 +2,7 @@
 layout: section
 ---
 
-[<img src="/assets/sections/primitive.png" align="right" width="128" height="auto"/>](/)
+<i class="icon fab fa-hotjar fa-7x"></i>
 
 <br/>
 <br/>

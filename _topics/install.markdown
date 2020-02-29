@@ -2,7 +2,7 @@
 layout: section
 ---
 
-[<img src="/assets/k9s.png" align="right" width="256" height="auto"/>](/)
+<i class="icon fas fa-tools fa-7x"></i>
 
 <br/>
 <br/>
@@ -16,7 +16,6 @@ layout: section
 ## <img src="/assets/sections/overview.png" width="auto" height="32"/> Overview
 
 K9s is available on Linux, macOS and Windows platforms.
-
 
 ### PreFlight Check
 

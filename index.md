@@ -23,10 +23,14 @@ K9s is a terminal based UI to interact with your Kubernetes clusters. The aim of
 - Cluster Metrics
   - Tracks real-time metrics associates with resources such as pods, containers and nodes.
 
-- Welcome Power Users!
+- Power Users Welcome!
   - Provides standard cluster management commands such as logs, scaling, port-forwards, restarts...
-  - Define your own commmand shortcuts via command aliases and hotkeys.
-  - Supports user custom plugins command to extend K9s with your very own cluster commands.
+  - Define your own commmand shortcuts for quick navigation via command aliases and hotkeys.
+  - Plugin support to extend K9s to create your very own cluster commands.
+  - Powerful filtering mode to allow user to drill down and view workload related resources.
+
+- Error Zoom
+  - Drill down directly to what's wrong with your cluster's resources.
 
 - Skinnable and Customizable
   - Define your very own look and feel via K9s skins.
@@ -35,10 +39,7 @@ K9s is a terminal based UI to interact with your Kubernetes clusters. The aim of
 - Narrow or Wide?
   - Provides toggles to view minimal or full resource definitions
 
-- Zoomable
-  - Drill down directly to what's wrong with your cluster's resources.
-
-- Cluster Overall Views
+- MultiResources Views
   - Provides for an overview of your cluster resources via Pulses and XRay views.
 
 - We've got your RBAC!
@@ -48,14 +49,14 @@ K9s is a terminal based UI to interact with your Kubernetes clusters. The aim of
 - Built-in Benchmarking
   - You can benchmark your HTTP services/pods directly from K9s to see how your application fare and adjust your resources request/limit accordingly.
 
-- Quick resource traversal
+- Resource Graph Traversals
   - K9s provides for easy traversal of Kubernetes resources and their associated resources.
 
 <br/>
 
 ## <i class="fas fa-book"/> Documentation
 
-  * <i class="fas fa-toolbox"/> [Installation]({{ "/topics/install" }})
+  * <i class="fas fa-tools"/> [Installation]({{ "/topics/install" }})
   * <i class="fas fa-terminal"/> [Commands]({{ "/topics/commands" }})
   * <i class="fas fa-car"/> Customizations
     * Feel

@@ -2,7 +2,7 @@
 layout: section
 ---
 
-[<img src="/assets/sections/dude.png" align="right" width="200" height="auto"/>](/)
+<i class="fas fa-cogs icon fa-7x"></i>
 
 <br/>
 <br/>

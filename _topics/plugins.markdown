@@ -2,7 +2,7 @@
 layout: section
 ---
 
-[<img src="/assets/sections/fox.png" align="right" width="256" height="auto"/>](/)
+<i class="icon fas fa-plug fa-7x"></i>
 
 <br/>
 <br/>

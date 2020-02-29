@@ -2,7 +2,7 @@
 layout: section
 ---
 
-[<img src="/assets/sections/cow.png" align="right" width="200" height="auto"/>](/)
+<i class="icon fas fa-terminal fa-7x"></i>
 
 <br/>
 <br/>

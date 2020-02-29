@@ -2,7 +2,8 @@
 layout: section
 ---
 
-[<img src="/assets/sections/lizard.jpg" align="right" width="200" height="auto"/>](/)
+<i class="icon fas fa-columns fa-7x"></i>
+
 
 <br/>
 <br/>
