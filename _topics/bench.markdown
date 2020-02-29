@@ -2,7 +2,7 @@
 layout: section
 ---
 
-[<img src="/assets/sections/howl.png" align="right" width="128" height="auto"/>](/lessons/agenda)
+[<img src="/assets/sections/howl.png" align="right" width="256" height="auto"/>](/)
 
 <br/>
 <br/>

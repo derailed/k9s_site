@@ -2,7 +2,7 @@
 layout: section
 ---
 
-[<img src="/assets/sections/dragon.jpg" align="right" width="128" height="auto"/>](/lessons/agenda)
+[<img src="/assets/sections/primitive.png" align="right" width="128" height="auto"/>](/)
 
 <br/>
 <br/>
@@ -12,7 +12,6 @@ layout: section
 
 <br/>
 
----
 ## <img src="/assets/sections/overview.png" width="auto" height="32"/> Overview
 
 Entering the command mode and typing a resource name or alias could be cumbersome for navigating thru often visited resources. By leveraging `hotkeys`, K9s can be configured to quickly navigate to your favorite resources. In order to enable hotkeys please follow these steps:
@@ -31,7 +30,6 @@ You can choose any keyboard shotcuts that make sense to you, provided they are n
 
 <br/>
 
----
 ## <img src="/assets/sections/examples.png" width="auto" height="32"/> Example
 
 ```yaml
