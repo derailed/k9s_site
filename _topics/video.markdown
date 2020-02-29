@@ -2,18 +2,17 @@
 layout: section
 ---
 
-[<img src="/assets/sections/butterfly.png" align="right" width="256" height="auto"/>](/)
+[<img src="/assets/sections/butterfly.png" align="right" width="200" height="auto"/>](/)
 
 <br/>
 <br/>
 <br/>
 
-# Videos
+# Tutorials And Demos
 
 <br/>
 
----
-## <img src="/assets/sections/overview.png" width="auto" height="32"/> Overview
+## <img src="/assets/sections/overview.png" width="auto" height="32"/> Assets
 
 * [K9s v0.17.0](https://www.youtube.com/watch?v=7S33CNLAofk&feature=youtu.be)
 * [K9s Pulses](https://asciinema.org/a/UbXKPal6IWpTaVAjBBFmizcGN)

@@ -2,7 +2,7 @@
 layout: section
 ---
 
-[<img src="/assets/sections/dude.png" align="right" width="256" height="auto"/>](/)
+[<img src="/assets/sections/dude.png" align="right" width="200" height="auto"/>](/)
 
 <br/>
 <br/>
@@ -12,12 +12,10 @@ layout: section
 
 <br/>
 
----
 ## <img src="/assets/sections/overview.png" width="auto" height="32"/> Overview
 
 K9s keeps its configurations in a .k9s directory in your home directory `$HOME/.k9s`. The main configuration file is named `config.yml` and stores various K9s specific bits. This file
 will be updated by k9s to store current view and namespaces information.
-
 
 <br/>
 <div class="note">
@@ -27,7 +25,6 @@ will be updated by k9s to store current view and namespaces information.
 
 <br/>
 
----
 ## <img src="/assets/sections/examples.png" width="auto" height="32"/> K9s CLI Configuration
 
 ```yaml

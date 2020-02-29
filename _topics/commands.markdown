@@ -2,7 +2,7 @@
 layout: section
 ---
 
-[<img src="/assets/sections/cow.png" align="right" width="256" height="auto"/>](/)
+[<img src="/assets/sections/cow.png" align="right" width="200" height="auto"/>](/)
 
 <br/>
 <br/>
@@ -12,7 +12,6 @@ layout: section
 
 <br/>
 
----
 ## <img src="/assets/sections/overview.png" width="auto" height="32"/> CLI Arguments
 
 K9s CLI comes with a view arguments that you can use to launch the tool with different configuration.
@@ -34,7 +33,6 @@ k9s --readonly
 
 <br/>
 
----
 ## <img src="/assets/sections/examples.png" width="auto" height="32"/> Navigation
 
 ## Key Bindings

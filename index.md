@@ -73,7 +73,7 @@ K9s is a terminal based UI to interact with your Kubernetes clusters. The aim of
 
 <br/>
 
-## <i class="fab fa-youtube"/> Demos and Screens
+## <i class="fab fa-youtube"/> Previews
 
 [![asciicast](https://asciinema.org/a/305944.svg)](https://asciinema.org/a/305944)
 

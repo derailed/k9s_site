@@ -12,7 +12,6 @@ layout: section
 
 <br/>
 
----
 ## <img src="/assets/sections/overview.png" width="auto" height="32"/> Overview
 
 K9s integrates [Hey](https://github.com/rakyll/hey) from the brilliant and super talented [Jaana Dogan](https://github.com/rakyll). `Hey` is a CLI tool to benchmark HTTP endpoints similar to AB bench. This preliminary feature currently supports benchmarking port-forwards and services (Read the paint on this is way fresh!).
@@ -28,7 +27,6 @@ Initially, the benchmarks will run with the following defaults:
 
 The PortForward view is backed by a new K9s config file namely: `$HOME/.k9s/bench-mycluster.yml`. Each cluster you connect to will have its own bench config file. Changes to this file should automatically update the PortForward view to indicate how you want to run your benchmarks.
 
-
 <br/>
 <div class="note">
   <i class="fas fa-skull"></i> Please keep in mind this file will likely change in subsequent releases!
@@ -36,9 +34,7 @@ The PortForward view is backed by a new K9s config file namely: `$HOME/.k9s/benc
 
 <br/>
 
----
 ## <img src="/assets/sections/examples.png" width="auto" height="32"/> Example
-
 
 ```yaml
 # This file resides in $HOME/.k9s/bench-mycluster.yml

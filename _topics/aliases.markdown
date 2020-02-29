@@ -2,7 +2,7 @@
 layout: section
 ---
 
-[<img src="/assets/sections/dragon_1.png" align="right" width="256" height="auto"/>](/)
+[<img src="/assets/sections/dragon_1.png" align="right" width="200" height="auto"/>](/)
 
 <br/>
 <br/>
@@ -12,7 +12,6 @@ layout: section
 
 <br/>
 
----
 ## <img src="/assets/sections/overview.png" width="auto" height="32"/> Overview
 
 In K9s, you can define your very own command aliases (shortnames) to access your resources. In your `$HOME/.k9s` define a file called `alias.yml`. A K9s alias defines pairs of alias:gvr. A gvr (Group/Version/Resource) represents a fully qualified Kubernetes resource identifier. Here is an example of an alias file:
@@ -20,7 +19,6 @@ In K9s, you can define your very own command aliases (shortnames) to access your
 
 <br/>
 
----
 ## <img src="/assets/sections/examples.png" width="auto" height="32"/> Example
 
 Using this alias file, you can now type pp/crb to list pods or clusterrolebindings respectively.

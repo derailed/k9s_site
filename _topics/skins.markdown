@@ -2,7 +2,7 @@
 layout: section
 ---
 
-[<img src="/assets/sections/elephant.jpg" align="right" width="256" height="auto"/>](/topics)
+[<img src="/assets/sections/elephant.jpg" align="right" width="150" height="auto"/>](/topics)
 
 <br/>
 <br/>
@@ -29,7 +29,6 @@ Colors can be defined as named colors (see table below) or uing an hex represent
 
 <br/>
 
----
 ## <img src="/assets/sections/examples.png" class="section"/> Skin Example
 
 ```yaml

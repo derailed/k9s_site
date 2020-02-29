@@ -12,7 +12,6 @@ layout: section
 
 <br/>
 
----
 ## <img src="/assets/sections/overview.png" width="auto" height="32"/> Overview
 
 K9s allows you to extend your command line and tooling by defining your very own cluster commands via plugins. K9s will look at `$HOME/.k9s/plugin.yml` to locate all available plugins. A plugin is defined as follows:
@@ -34,15 +33,13 @@ K9s does provide additional environment variables for you to customize your plug
 * `$GROUPS` the active groups
 * `$COLX` the column at index X for the viewed resource
 
-
 <br/>
 <div class="note">
-  <i class="fas fa-skull"></i> Options and layout may change in future K9s releases as this feature solidifies.
+  <i class="fas fa-skull"></i> Work in progress... Options and layout may change in future K9s releases as this feature solidifies.
 </div>
 
 <br/>
 
----
 ## <img src="/assets/sections/examples.png" width="auto" height="32"/> Example
 
 ```yaml
