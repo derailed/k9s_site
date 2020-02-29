@@ -140,13 +140,13 @@ a:-webkit-any-link {
 }
 
 a {
-    color: cadetblue;
-    a:visited {
-        color: #333;
-    }
+    color: #2390FF;
+}
+a:visited {
+  color: #2390FF;
 }
 a:hover {
-    color: #333;
+    color: rgb(76, 73, 255);
 }
 
 a.email {
