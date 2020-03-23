@@ -34,10 +34,14 @@ will be updated by k9s to store current view and namespaces information.
     refreshRate: 2
     # Indicates whether modification commands like delete/kill/edit are disabled. Default is false
     readOnly: false
-    # Indicates log view maximum buffer size. Default 1k lines.
-    logBufferSize: 200
-    # Indicates how many lines of logs to retrieve from the api-server. Default 200 lines.
-    logRequestSize: 200
+    # Logs configuration
+    logger:
+      # Defines the number of lines to return. Default 100
+      tail: 200
+      # Defines the total number of log lines to allow in the view. Default 1000
+      buffer: 500
+      # Represents how far to go back in the log timeline in seconds. Default is 5min
+      sinceSeconds: 300
     # Indicates the current kube context. Defaults to current context
     currentContext: minikube
     # Indicates the current kube cluster. Defaults to current context cluster
