@@ -103,7 +103,7 @@ K9s is a terminal based UI to interact with your Kubernetes clusters. The aim of
 
 ## <i class="fas fa-bullhorn"></i> Sponsor Us!
 
-If you dig this effort, consider clicking the Sponsor button on the K9s Github repository, or just simply give us a shoot-out on social as these go a long way in keeping our batteries charged up!!
+If you dig this effort, consider clicking the [Sponsor button](https://github.com/sponsors/derailed) on the K9s Github repository, or just simply give us a shoot-out on social as these go a long way in keeping our batteries charged up!!
 
 <br/>
 
