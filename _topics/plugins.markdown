@@ -16,9 +16,14 @@ layout: section
 
 K9s allows you to extend your command line and tooling by defining your very own cluster commands via plugins. K9s will look at `$HOME/.k9s/plugin.yml` to locate all available plugins. A plugin is defined as follows:
 
-The shortcut option represents the command a user would type to activate the plugin. The command represents adhoc commands the plugin runs upon activation. The scopes defines a collection of resources names/shortnames for the views this plugin should be available for. You can specify `all` to provide this shortcut for all views.
+* Shortcut option represents the key combination a user would type to activate the plugin
+* Description will be printed next to the shortcut in the k9s menu
+* Scopes defines a collection of resources names/shortnames for the views associated with the plugin. You can specify `all` to provide this shortcut for all views.
+* Command represents adhoc commands the plugin runs upon activation
+* Background specifies whether or not the command runs in the background
+* Args specifies the various arguments that should apply to the command above
 
-K9s does provide additional environment variables for you to customize your plugins. Currently, the available environment variables are as follows:
+K9s does provide additional environment variables for you to customize your plugins arguments. Currently, the available environment variables are as follows:
 
 * `$NAMESPACE` -- the selected resource namespace
 * `$NAME` -- the selected resource name
