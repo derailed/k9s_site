@@ -31,7 +31,7 @@ K9s does provide additional environment variables for you to customize your plug
 * `$CONTEXT` the active context name
 * `$USER` the active user
 * `$GROUPS` the active groups
-* `$COLX` the column at index X for the viewed resource
+* `$COL-<RESOURCE_COLUMN_NAME>` use a given column name for a viewed resource. Must be prefixed by `COL-`!
 
 <br/>
 <div class="note">
