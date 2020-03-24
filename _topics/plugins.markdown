@@ -51,7 +51,7 @@ This defines a plugin for viewing logs on a selected pod using `ctrl-l` mnemonic
 ```yaml
 # $HOME/.k9s/plugin.yml
 plugin:
-  # Defines a plugin to provide a `Ctrl-L` shorcut to tail the logs while in pod view.
+  # Defines a plugin to provide a `ctrl-l` shorcut to tail the logs while in pod view.
   fred:
     shortCut: Ctrl-L
     description: Pod logs
