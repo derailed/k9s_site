@@ -16,9 +16,7 @@ layout: section
 
 K9s allows you to extend your command line and tooling by defining your very own cluster commands via plugins. K9s will look at `$HOME/.k9s/plugin.yml` to locate all available plugins. A plugin is defined as follows:
 
-This defines a plugin for viewing logs on a selected pod using `CtrlL` mnemonic.
-
-The shortcut option represents the command a user would type to activate the plugin. The command represents adhoc commands the plugin runs upon activation. The scopes defines a collection of resources names/shortnames for which the plugin shortcut will be made available to the user. You can specify all to provide this shortcut for all views.
+The shortcut option represents the command a user would type to activate the plugin. The command represents adhoc commands the plugin runs upon activation. The scopes defines a collection of resources names/shortnames for the views this plugin should be available for. You can specify `all` to provide this shortcut for all views.
 
 K9s does provide additional environment variables for you to customize your plugins. Currently, the available environment variables are as follows:
 
@@ -31,6 +29,7 @@ K9s does provide additional environment variables for you to customize your plug
 * `$CONTEXT` the active context name
 * `$USER` the active user
 * `$GROUPS` the active groups
+* `$POD` while in a container view
 * `$COL-<RESOURCE_COLUMN_NAME>` use a given column name for a viewed resource. Must be prefixed by `COL-`!
 
 <br/>
@@ -41,6 +40,8 @@ K9s does provide additional environment variables for you to customize your plug
 <br/>
 
 ## <img src="/assets/sections/examples.png" width="auto" height="32"/> Example
+
+This defines a plugin for viewing logs on a selected pod using `ctrl-l` mnemonic.
 
 ```yaml
 # $HOME/.k9s/plugin.yml
