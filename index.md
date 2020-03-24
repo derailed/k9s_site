@@ -10,6 +10,7 @@ layout: site
 
 K9s is a terminal based UI to interact with your Kubernetes clusters. The aim of this project is to make it easier to navigate, observe and manage your deployed applications in the wild. K9s continually watches Kubernetes for changes and offers subsequent commands to interact with your observed resources.
 
+
 <br/>
 
 ## <i class="fas fa-highlighter"/> Features
@@ -93,11 +94,11 @@ K9s is a terminal based UI to interact with your Kubernetes clusters. The aim of
 
 ## <i class="fas fa-phone-volume"></i> Get In Touch!
 
-* <i class="fas fa-at"/>  [Fernand Galiana](mailto://{{ site.email }})
-* <i class="fab fa-twitter"/> [@{{ site.twitter }}](https://twitter.com/{{ site.twitter }}?lang=en)
-* <i class="fab fa-github"/> [K9s Repo](https://github.com/{{ site.github }})
-* <i class="fab fa-slack"/>  [K9ers Slack](https://k9sers.slack.com/)
-* <i class="fab fa-slack-hash"/> [K9ers Slack Invite](https://join.slack.com/t/k9sers/shared_invite/enQtOTA5MDEyNzI5MTU0LWQ1ZGI3MzliYzZhZWEyNzYxYzA3NjE0YTk1YmFmNzViZjIyNzhkZGI0MmJjYzhlNjdlMGJhYzE2ZGU1NjkyNTM)
+* <i class="fas fa-at fa-2x"/>  [Fernand Galiana](mailto://{{ site.email }})
+* <i class="fab fa-twitter fa-2x"/> [@{{ site.twitter }}](https://twitter.com/{{ site.twitter }}?lang=en)
+* <i class="fab fa-github fa-2x"/> [K9s Repo](https://github.com/{{ site.github }})
+* <i class="fab fa-slack fa-2x"/>  [K9ers Slack](https://k9sers.slack.com/)
+* <i class="fab fa-slack-hash fa-2x"/> [K9ers Slack Invite](https://join.slack.com/t/k9sers/shared_invite/enQtOTA5MDEyNzI5MTU0LWQ1ZGI3MzliYzZhZWEyNzYxYzA3NjE0YTk1YmFmNzViZjIyNzhkZGI0MmJjYzhlNjdlMGJhYzE2ZGU1NjkyNTM)
 
 <br/>
 
