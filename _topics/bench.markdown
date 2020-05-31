@@ -16,7 +16,7 @@ layout: section
 
 K9s integrates [Hey](https://github.com/rakyll/hey) from the brilliant and super talented [Jaana Dogan](https://github.com/rakyll). `Hey` is a CLI tool to benchmark HTTP endpoints similar to AB bench. This preliminary feature currently supports benchmarking port-forwards and services (Read the paint on this is way fresh!).
 
-To setup a port-forward, you will need to navigate to the PodView, select a pod and a container that exposes a given port. Using `SHIFT-F` a dialog comes up to allow you to specify a local port to forward. Once acknowledged, you can navigate to the PortForward view (alias `pf`) listing out your active port-forwards. Selecting a port-forward and using `CTRL-B` will run a benchmark on that HTTP endpoint. To view the results of your benchmark runs, go to the Benchmarks view (alias `be`). You should now be able to select a benchmark and view the run stats details by pressing `<ENTER>`. NOTE: Port-forwards only last for the duration of the K9s session and will be terminated upon exit.
+To setup a port-forward, you will need to navigate to the PodView, select a pod and a container that exposes a given port. Using `SHIFT-F` a dialog comes up to allow you to specify a local port to forward to. Once acknowledged, you can navigate to the PortForward view (alias `pf`) listing out your active port-forwards. Selecting a port-forward and using `CTRL-B` will run a benchmark on that HTTP endpoint. To view the results of your benchmark runs, go to the Benchmarks view (alias `be`). You should now be able to select a benchmark and view the run stats details by pressing `<ENTER>`. NOTE: Port-forwards only last for the duration of the K9s session and will be terminated upon exit.
 
 Initially, the benchmarks will run with the following defaults:
 
@@ -37,14 +37,14 @@ The PortForward view is backed by a new K9s config file namely: `$HOME/.k9s/benc
 ## <img src="/assets/sections/examples.png" width="auto" height="32"/> Example
 
 ```yaml
-# This file resides in $HOME/.k9s/bench-mycluster.yml
+# $HOME/.k9s/bench-mycluster.yml
 benchmarks:
   # Indicates the default concurrency and number of requests setting if a container or service rule does not match.
   defaults:
     # One concurrent connection
-    concurrency: 1
+    concurrency: 2
     # Number of requests that will be sent to an endpoint
-    requests: 500
+    requests: 1000
   containers:
     # Containers section allows you to configure your http container's endpoints and benchmarking settings.
     # NOTE: the container ID syntax uses namespace/pod-name:container-name
@@ -63,7 +63,7 @@ benchmarks:
           Content-Type:
             - application/json
   services:
-    # Similary you can Benchmark an HTTP service exposed either via nodeport, loadbalancer types.
+    # Similarly you can Benchmark an HTTP service exposed either via NodePort, LoadBalancer types.
     # Service ID is ns/svc-name
     default/nginx:
       # Set the concurrency level
@@ -72,9 +72,9 @@ benchmarks:
       requests: 500
       http:
         method: GET
-        # This setting will depend on whether service is nodeport or loadbalancer. Nodeport may require vendor port tuneling setting.
-        # Set this to a node if nodeport or LB if applicable. IP or dns name.
-        host: A.B.C.D
+        # This setting will depend on whether service is ModePort or LoadBalancer. NodePort may require vendor port tunneling setting.
+        # Set this to a node if ModePort or LB if applicable. IP or dns name.
+        host: 1.2.3.4
         path: /bumblebeetuna
       auth:
         user: jean-baptiste-emmanuel

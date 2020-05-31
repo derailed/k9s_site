@@ -21,7 +21,7 @@ Entering the command mode and typing a resource name or alias could be cumbersom
 
 Not feeling so hot? Your custom hotkeys will be listed in the help view `?`. Also your hotkey file will be automatically reloaded so you can readily use your hotkeys as you define them.
 
-You can choose any keyboard shotcuts that make sense to you, provided they are not part of the standard K9s shortcuts list.
+You can choose any keyboard shortcuts that make sense to you, provided they are not part of the standard K9s shortcuts list.
 
 <br/>
 <div class="note">
@@ -35,19 +35,22 @@ You can choose any keyboard shotcuts that make sense to you, provided they are n
 ```yaml
 # $HOME/.k9s/hotkey.yml
 hotKey:
+
   # Hitting Shift-0 navigates to your pod view
   shift-0:
     shortCut:    Shift-0
     description: Viewing pods
     command:     pods
+
   # Hitting Shift-1 navigates to your deployments
   shift-1:
     shortCut:    Shift-1
     description: View deployments
     command:     dp
+
   # Hitting Shift-2 navigates to your xray deployments
   shift-2:
     shortCut:    Shift-2
-    description: Xray Deployments
+    description: XRay Deployments
     command:     xray deploy
 ```

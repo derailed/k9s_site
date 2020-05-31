@@ -18,7 +18,6 @@ On RBAC enabled clusters, you would need to give your users/groups capabilities 
 
 These rules below are just suggestions. You will need to customize them based on your environment policies. If you need to edit/delete resources extra Fu will be necessary.
 
-
 <br/>
 <div class="note">
   <i class="fas fa-skull"></i> Cluster/Namespace access may change in the future as K9s evolves.
@@ -38,7 +37,7 @@ metadata:
 rules:
   # Grants RO access to cluster resources node and namespace
   - apiGroups: [""]
-    resources: ["nodes", "namespaces"]
+    resources: ["nodes", "namespaces", "persistentvolumes"]
     verbs: ["get", "list", "watch"]
   # Grants RO access to RBAC resources
   - apiGroups: ["rbac.authorization.k8s.io"]

@@ -23,9 +23,9 @@ k9s help
 k9s info
 # Run K9s in a given namespace.
 k9s -n mycoolns
-# Run K9s and launch the pod view.
+# Run K9s and launch in pod view via the pod command.
 k9s -c pod
-# Start K9s in an existing KubeConfig context
+# Start K9s in a non default KubeConfig context
 k9s --context coolCtx
 # Start K9s in readonly mode - with all modification commands disabled
 k9s --readonly

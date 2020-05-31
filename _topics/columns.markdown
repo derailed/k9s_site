@@ -25,11 +25,11 @@ To surface this feature, you will need to create a new configuration file, namel
 
 Here is a sample views configuration that customize a pods and services views.
 
-
 ```yaml
 # $HOME/.k9s/views.yml
 k9s:
   views:
+    # Alters the pod view column layout. Uses GVR as key
     v1/pods:
       columns:
         - AGE
@@ -39,6 +39,8 @@ k9s:
         - NODE
         - STATUS
         - READY
+
+    # Alters the service view column layout
     v1/services:
       columns:
         - AGE

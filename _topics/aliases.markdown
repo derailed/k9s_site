@@ -16,10 +16,10 @@ layout: section
 
 K9s command mode supports autosuggestions. Suggestions are based on supported Kubernetes resource in singular/plural as well as short names and command aliases as describe below. The command mode supports the following keys:
 
-| Key                 | Description                              |
-| ------------------- | ---------------------------------------- |
-| ⬆️ ⬇️               | Navigate up or down thru the suggestions |
-| `Ctrl-w`, `Ctrl-u`  | Clear out the command                    |
+| Key                | Description                              |
+| ------------------ | ---------------------------------------- |
+| ⬆️ ⬇️                | Navigate up or down thru the suggestions |
+| `Ctrl-w`, `Ctrl-u` | Clear out the command                    |
 | `Tab`, `Ctrl-f`, ➡️ | Accept the suggestion                    |
 
 <br/>
@@ -38,6 +38,18 @@ Using this alias file, you can now type pp/crb to list pods or clusterrolebindin
 ```yaml
 # $HOME/.k9s/alias.yml
 alias:
+  # Use pp as an alias for Pod
   pp: v1/pods
+
+  # Use crb as an alias for ClusterRoleBinding
   crb: rbac.authorization.k8s.io/v1/clusterrolebindings
+
+  # Use cr as an alias for ClusterRole
+  cr: rbac.authorization.k8s.io/v1/clusterroles
+
+  # Use dep as an alias for Deployments
+  dep: apps/v1/deployments
+
+  # Use fred as an alias for CRD Frederick
+  fred: acme.io/v1alpha1/fredericks
 ```
