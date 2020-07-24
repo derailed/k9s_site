@@ -70,6 +70,7 @@ If you dig this effort and feel K9s is improving your Kubernetes experience and 
     * [Aliases]({{ "/topics/aliases" }})
     * [HotKeys]({{ "/topics/hotkeys" }})
     * [Plugins]({{ "/topics/plugins" }})
+    * [Node Shell]({{ "/topics/shell" }})
   * Look
     * [Skins]({{ "/topics/skins" }})
     * [Resource Columns]({{ "/topics/columns" }})
