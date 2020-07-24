@@ -53,7 +53,7 @@ k9s:
     # Toggles log line timestamp info. Default false
     showTime: false
 
-  # Indicates the current kube context. Defaults to current context
+  # Indicates the current Kube context. Defaults to current context
   currentContext: minikube
   # Indicates the current kube cluster. Defaults to current context cluster
   currentCluster: minikube
@@ -69,7 +69,7 @@ k9s:
       view:
         active: po
       featureGates:
-        # Toggles nodeshell support. Allow K9s to shell into nodes if needed. Default false.
+        # Toggles NodeShell support. Allow K9s to shell into nodes if needed. Default false.
         nodeShell: false
       # Provide shell pod customization of feature gate is enabled
       shellPod:

@@ -19,7 +19,7 @@ K9s allows you to extend your command line and tooling by defining your very own
 * Shortcut option represents the key combination a user would type to activate the plugin
 * Description will be printed next to the shortcut in the k9s menu
 * Scopes defines a collection of resources name/short-name for the views associated with the plugin. You can specify `all` to provide this shortcut for all views.
-* Command represents adhoc commands the plugin runs upon activation
+* Command represents ad-hoc commands the plugin runs upon activation
 * Background specifies whether or not the command runs in the background
 * Args specifies the various arguments that should apply to the command above
 
@@ -63,7 +63,7 @@ plugin:
     # Collections of views that support this shortcut. (You can use `all`)
     scopes:
     - po
-    # The command to run upon invocation. Can use krew plugins here too!
+    # The command to run upon invocation. Can use Krew plugins here too!
     command: kubectl
     # Whether or not to run the command in background mode
     background: false

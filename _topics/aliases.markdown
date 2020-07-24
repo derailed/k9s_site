@@ -26,14 +26,14 @@ K9s command mode supports autosuggestions. Suggestions are based on supported Ku
 
 ## <img src="/assets/sections/overview.png" width="auto" height="32"/> Aliases
 
-In K9s, you can define your very own command aliases (shortnames) to access your resources. In your `$HOME/.k9s` define a file called `alias.yml`. A K9s alias defines pairs of alias:gvr. A gvr (Group/Version/Resource) represents a fully qualified Kubernetes resource identifier. Here is an example of an alias file:
+In K9s, you can define your very own command aliases (short-names) to access your resources. In your `$HOME/.k9s` define a file called `alias.yml`. A K9s alias defines pairs of alias:gvr. A gvr (Group/Version/Resource) represents a fully qualified Kubernetes resource identifier. Here is an example of an alias file:
 
 
 <br/>
 
 ## <img src="/assets/sections/examples.png" width="auto" height="32"/> Example
 
-Using this alias file, you can now type pp/crb to list pods or clusterrolebindings respectively.
+Using this alias file, you can now type pp/crb to list pods or ClusterRoleBindings respectively.
 
 ```yaml
 # $HOME/.k9s/alias.yml
