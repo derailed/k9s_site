@@ -2,7 +2,7 @@
 layout: section
 ---
 
-<i class="icon fas fa-plug fa-7x"></i>
+<i class="icon fas fa-hdd fa-7x"></i>
 
 <br/>
 <br/>
