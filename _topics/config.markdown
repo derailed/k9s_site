@@ -31,8 +31,14 @@ will be updated by k9s to store current view and namespaces information.
 k9s:
   # Represents ui poll intervals. Default 2secs
   refreshRate: 2
+  # Number of retries once the connection to the api-server is lost. Default 15.
+  maxConnRetry: 5
+  # Enable mouse support. Default false
+  enableMouse: true
   # Set to true to hide K9s header. Default false
   headless: false
+  # Set to true to hide K9s crumbs. Default false
+  crumbsless: false
   # Indicates whether modification commands like delete/kill/edit are disabled. Default is false
   readOnly: false
   # Toggles icons display as not all terminal support these chars.
@@ -44,7 +50,7 @@ k9s:
     tail: 200
     # Defines the total number of log lines to allow in the view. Default 1000
     buffer: 500
-    # Represents how far to go back in the log timeline in seconds. Default is 5min
+    # Represents how far to go back in the log timeline in seconds. Setting to -1 will show all available logs. Default is 5mins.
     sinceSeconds: 300
     # Go full screen while displaying logs. Default false
     fullScreenLogs: false
