@@ -35,9 +35,8 @@ k9s --readonly
 
 ## <img src="/assets/sections/examples.png" width="auto" height="32"/> Key Bindings
 
-
 | Action                                                         | Command                       | Comment                                                                |
-|----------------------------------------------------------------|-------------------------------|------------------------------------------------------------------------|
+| -------------------------------------------------------------- | ----------------------------- | ---------------------------------------------------------------------- |
 | Show active keyboard mnemonics and help                        | `?`                           |                                                                        |
 | Show all available resource alias                              | `ctrl-a`                      |                                                                        |
 | To bail out of K9s                                             | `:q`, `ctrl-c`                |                                                                        |
@@ -55,6 +54,8 @@ k9s --readonly
 | To view all saved resources                                    | `:`screendump or sd⏎          |                                                                        |
 | To delete a resource (TAB and ENTER to confirm)                | `ctrl-d`                      |                                                                        |
 | To kill a resource (no confirmation dialog!)                   | `ctrl-k`                      |                                                                        |
+| Toggle Wide Columns                                            | `ctrl-w`                      | Equivalent to `kubectl ... -o wide`                                    |
+| Toggle Error State                                             | `ctrl-z`                      | View resources in error condition                                      |
 | Launch pulses view                                             | `:`pulses or pu⏎              |                                                                        |
 | Launch XRay view                                               | `:`xray RESOURCE [NAMESPACE]⏎ | RESOURCE can be one of po, svc, dp, rs, sts, ds, NAMESPACE is optional |
 | Launch Popeye view                                             | `:`popeye or pop⏎             | See https://popeyecli.io                                               |
