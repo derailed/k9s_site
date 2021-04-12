@@ -38,7 +38,7 @@ k9s --readonly
 | Action                                                         | Command                       | Comment                                                                |
 | -------------------------------------------------------------- | ----------------------------- | ---------------------------------------------------------------------- |
 | Show active keyboard mnemonics and help                        | `?`                           |                                                                        |
-| Show all available resource alias                              | `ctrl-a`                      |                                                                        |
+| Show all available aliases and resources on the cluster        | `ctrl-a` or `:alias`          |                                                                        |
 | To bail out of K9s                                             | `:q`, `ctrl-c`                |                                                                        |
 | View a Kubernetes resource using singular/plural or short-name | `:`po⏎                        | accepts singular, plural, short-name or alias ie pod or pods           |
 | View a Kubernetes resource in a given namespace                | `:`alias namespace⏎           |                                                                        |
