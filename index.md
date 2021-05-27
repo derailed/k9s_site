@@ -58,25 +58,27 @@ K9s is a terminal based UI to interact with your Kubernetes clusters. The aim of
 
 If you dig this effort and feel K9s is improving your Kubernetes experience and productivity for you or your team, please join our sponsorship program! K9s is complex and and a lot of work, by clicking the [Sponsor button](https://github.com/sponsors/derailed) you can help show your support and appreciation. Alternatively, just simply give us a shoot-out on social as these go a long way in keeping our batteries charged up!
 
+Alternatively, if you dig K9s, please checkout [K9sAlpha](https://k9salpha.io). The `AlphaDog` encompasses things you love about K9s with additional advanced features that will help you further improve your Kubernetes cluster management. K9sAlpha is a paid version of K9s and your contributions is what help us power both offerings. As you may know, K9s and K9sAlpha are not pimped out by big corporations with deep pockets, both projects chew up a lot of our `free` time, so if K9s improves your Kubernetes productivity for you or your company, please consider pitching back!
+
 <br/>
 
 # <i class="fas fa-book"/> Documentation
 
-* <i class="fas fa-tools"/> [Installation]({{ "/topics/install" }})
-* <i class="fas fa-terminal"/> [Commands]({{ "/topics/commands" }})
-* <i class="fas fa-car"/> Customizations
-  * Feel
-    * [K9s]({{ "/topics/config" }})
-    * [Aliases]({{ "/topics/aliases" }})
-    * [HotKeys]({{ "/topics/hotkeys" }})
-    * [Plugins]({{ "/topics/plugins" }})
-    * [Node Shell]({{ "/topics/shell" }})
-  * Look
-    * [Skins]({{ "/topics/skins" }})
-    * [Resource Columns]({{ "/topics/columns" }})
-* <i class="fas fa-tachometer-alt"/> [Benchmarking]({{ "/topics/bench" }})
-* <i class="fas fa-key"/> [RBAC]({{ "/topics/rbac" }})
-* <i class="fas fa-video"/> [Tutorials]({{ "/topics/video" }})
+- <i class="fas fa-tools"/> [Installation]({{ "/topics/install" }})
+- <i class="fas fa-terminal"/> [Commands]({{ "/topics/commands" }})
+- <i class="fas fa-car"/> Customizations
+  - Feel
+    - [K9s]({{ "/topics/config" }})
+    - [Aliases]({{ "/topics/aliases" }})
+    - [HotKeys]({{ "/topics/hotkeys" }})
+    - [Plugins]({{ "/topics/plugins" }})
+    - [Node Shell]({{ "/topics/shell" }})
+  - Look
+    - [Skins]({{ "/topics/skins" }})
+    - [Resource Columns]({{ "/topics/columns" }})
+- <i class="fas fa-tachometer-alt"/> [Benchmarking]({{ "/topics/bench" }})
+- <i class="fas fa-key"/> [RBAC]({{ "/topics/rbac" }})
+- <i class="fas fa-video"/> [Tutorials]({{ "/topics/video" }})
 
 <br/>
 
@@ -105,11 +107,11 @@ K9s sits on top of many open source projects and libraries. Our *sincere* apprec
 
 ## <i class="fas fa-phone-volume"></i> Get In Touch!
 
-* <i class="fas fa-at fa-2x"/>  [Fernand Galiana](mailto://{{ site.email }})
-* <i class="fab fa-twitter fa-2x"/> [@{{ site.twitter }}](https://twitter.com/{{ site.twitter }}?lang=en)
-* <i class="fab fa-github fa-2x"/> [K9s Repo](https://github.com/{{ site.github }})
-* <i class="fab fa-slack fa-2x"/>  [K9ers Slack](https://k9sers.slack.com/)
-* <i class="fab fa-slack-hash fa-2x"/> [K9ers Slack Invite](https://join.slack.com/t/k9sers/shared_invite/enQtOTA5MDEyNzI5MTU0LWQ1ZGI3MzliYzZhZWEyNzYxYzA3NjE0YTk1YmFmNzViZjIyNzhkZGI0MmJjYzhlNjdlMGJhYzE2ZGU1NjkyNTM)
+- <i class="fas fa-at fa-2x"/>  [Fernand Galiana](mailto://{{ site.email }})
+- <i class="fab fa-twitter fa-2x"/> [@{{ site.twitter }}](https://twitter.com/{{ site.twitter }}?lang=en)
+- <i class="fab fa-github fa-2x"/> [K9s Repo](https://github.com/{{ site.github }})
+- <i class="fab fa-slack fa-2x"/>  [K9ers Slack](https://k9sers.slack.com/)
+- <i class="fab fa-slack-hash fa-2x"/> [K9ers Slack Invite](https://join.slack.com/t/k9sers/shared_invite/enQtOTA5MDEyNzI5MTU0LWQ1ZGI3MzliYzZhZWEyNzYxYzA3NjE0YTk1YmFmNzViZjIyNzhkZGI0MmJjYzhlNjdlMGJhYzE2ZGU1NjkyNTM)
 
 <br/>
 
