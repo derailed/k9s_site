@@ -16,7 +16,7 @@ layout: section
 
 Entering the command mode and typing a resource name or alias could be cumbersome for navigating thru often visited resources. By leveraging `hotkeys`, K9s can be configured to quickly navigate to your favorite resources. In order to enable hotkeys please follow these steps:
 
-1. Create a file named `$HOME/.k9s/hotkey.yml`
+1. Create a file named `$XDG_CONFIG_HOME/k9s/hotkey.yml`
 2. Add the following to your `hotkey.yml`. You can use resource name/short name to specify a command ie same as typing it while in command mode.
 
 Not feeling so hot? Your custom hotkeys will be listed in the help view `?`. Also your hotkey file will be automatically reloaded so you can readily use your hotkeys as you define them.
@@ -33,7 +33,7 @@ You can choose any keyboard shortcuts that make sense to you, provided they are 
 ## <img src="/assets/sections/examples.png" width="auto" height="32"/> Example
 
 ```yaml
-# $HOME/.k9s/hotkey.yml
+# $XDG_CONFIG_HOME/k9s/hotkey.yml
 hotKey:
 
   # Hitting Shift-0 navigates to your pod view

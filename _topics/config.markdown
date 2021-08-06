@@ -14,7 +14,7 @@ layout: section
 
 ## <img src="/assets/sections/overview.png" width="auto" height="32"/> Overview
 
-K9s keeps its configurations in a .k9s directory in your home directory `$HOME/.k9s`. The main configuration file is named `config.yml` and stores various K9s specific bits. This file
+K9s leverages [XDG](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html) to keep its configuration files under `$XDG_CONFIG_HOME/k9s`. The default configuration will vary across operating system so be sure to read up on the default location if you choose not to set that environment variable. The main configuration file is named `config.yml` and stores various K9s specific bits. This file
 will be updated by k9s to store current view and namespaces information.
 
 <br/>
@@ -27,7 +27,7 @@ will be updated by k9s to store current view and namespaces information.
 ## <img src="/assets/sections/examples.png" width="auto" height="32"/> K9s CLI Configuration
 
 ```yaml
-# $HOME/.k9s/config.yml
+# $XDG_CONFIG_HOME/k9s/config.yml
 k9s:
   # Represents ui poll intervals. Default 2secs
   refreshRate: 2

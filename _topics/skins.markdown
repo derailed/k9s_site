@@ -12,7 +12,7 @@ layout: section
 
 ## <img src="/assets/sections/overview.png" width="auto" height="32"/> Overview
 
-You can style K9s based on your own sense of look and style. Skins are YAML files, that enable a user to change the K9s presentation layer. Skin files live in your `$HOME/.k9s` folder. You can specify a general skin file `skin.yml` that applies to all your clusters or cluster specific skins that are named after the cluster you are connecting to. If a skin file exists for your cluster then the skin will be loaded if not the stock skin remains in effect. So if your want different K9s look and feel on a per cluster basis and say your cluster is named `fred` then your skin file name should be named `$HOME/.k9s/fred_skin.yml`. Below is a sample skin file, more skins are available in the [skins](https://github.com/derailed/k9s/tree/master/skins) directory in the K9s repo.
+You can style K9s based on your own sense of look and style. Skins are YAML files, that enable a user to change the K9s presentation layer. Skin files live in your `$XDG_CONFIG_HOME/k9s` folder. You can specify a general skin file `skin.yml` that applies to all your clusters or cluster specific skins that are named after the cluster you are connecting to. If a skin file exists for your cluster then the skin will be loaded if not the stock skin remains in effect. So if your want different K9s look and feel on a per cluster basis and say your cluster is named `fred` then your skin file name should be named `$XDG_CONFIG_HOME/k9s/fred_skin.yml`. Below is a sample skin file, more skins are available in the [skins](https://github.com/derailed/k9s/tree/master/skins) directory in the K9s repo.
 
 Colors can be defined as named colors (see table below) or using an hex representation. To preserve your terminal session background color, we've added a color named `default` to indicate a transparent background color if so desired.
 
@@ -32,7 +32,7 @@ Colors can be defined as named colors (see table below) or using an hex represen
 ## <img src="/assets/sections/examples.png" class="section"/> Skin Example
 
 ```yaml
-# $HOME/.k9s/in_the_navy_skin.yml
+# $XDG_CONFIG_HOME/k9s/in_the_navy_skin.yml
 k9s:
   # General K9s styles
   body:

@@ -25,7 +25,7 @@ Initially, the benchmarks will run with the following defaults:
 * HTTP Verb: GET
 * Path: /
 
-The PortForward view is backed by a new K9s config file namely: `$HOME/.k9s/bench-<my_context>.yml`. Each cluster you connect to will have its own bench config file. Changes to this file should automatically update the PortForward view to indicate how you want to run your benchmarks.
+The PortForward view is backed by a new K9s config file namely: `$XDG_CONFIG_HOME/k9s/bench-<my_context>.yml`. Each cluster you connect to will have its own bench config file. Changes to this file should automatically update the PortForward view to indicate how you want to run your benchmarks.
 
 <br/>
 <div class="note">
@@ -37,7 +37,7 @@ The PortForward view is backed by a new K9s config file namely: `$HOME/.k9s/benc
 ## <img src="/assets/sections/examples.png" width="auto" height="32"/> Example
 
 ```yaml
-# $HOME/.k9s/bench-<my_k8s_context>.yml
+# $XDG_CONFIG_HOME/k9s/bench-<my_k8s_context>.yml
 benchmarks:
   # Indicates the default concurrency and number of requests setting if a container or service rule does not match.
   defaults:

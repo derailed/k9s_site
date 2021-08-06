@@ -28,7 +28,7 @@ By enabling the nodeShell feature gate on a given cluster, K9s allows you to she
 Enabling a node shell on cluster `blee`
 
 ```yaml
-# $HOME/.k9s/config.yml
+# $XDG_CONFIG_HOME/k9s/config.yml
 k9s:
   clusters:
     # Configures node shell on cluster blee
