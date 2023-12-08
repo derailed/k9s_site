@@ -65,8 +65,21 @@ k9s:
   currentContext: minikube
   # Indicates the current kube cluster. Defaults to current context cluster
   currentCluster: minikube
-  # Persists per cluster preferences for favorite namespaces and view.
 
+  # Provide shell pod customization when nodeShell feature gate is enabled!
+  shellPod:
+    # The shell pod image to use.
+    image: killerAdmin
+    # The namespace to launch to shell pod into.
+    namespace: default
+    # The resource limit to set on the shell pod.
+    limits:
+      cpu: 100m
+      memory: 100Mi
+    # Enable TTY
+    tty: true
+
+# Persists per cluster preferences for favorite namespaces and view.
   clusters:
     cluster1:
       namespace:
@@ -79,16 +92,6 @@ k9s:
       featureGates:
         # Toggles NodeShell support. Allow K9s to shell into nodes if needed. Default false.
         nodeShell: false
-      # Provide shell pod customization of feature gate is enabled
-      shellPod:
-        # The shell pod image to use.
-        image: killerAdmin
-        # The namespace to launch to shell pod into.
-        namespace: fred
-        # The resource limit to set on the shell pod.
-        limits:
-          cpu: 100m
-          memory: 100Mi
       # The IP Address to use when launching a port-forward.
       portForwardAddress: 1.2.3.4
     cluster2:
