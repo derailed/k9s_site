@@ -12,7 +12,10 @@ layout: section
 
 ## <img src="/assets/sections/overview.png" width="auto" height="32"/> Overview
 
-You can style K9s based on your own sense of look and style. Skins are YAML files, that enable a user to change the K9s presentation layer. Skin files live in your `$XDG_CONFIG_HOME/k9s` folder. You can specify a general skin file `skin.yml` that applies to all your clusters or cluster specific skins that are named after the cluster you are connecting to. If a skin file exists for your cluster then the skin will be loaded if not the stock skin remains in effect. So if your want different K9s look and feel on a per cluster basis and say your cluster is named `fred` then your skin file name should be named `$XDG_CONFIG_HOME/k9s/fred_skin.yml`. Below is a sample skin file, more skins are available in the [skins](https://github.com/derailed/k9s/tree/master/skins) directory in the K9s repo.
+You can style K9s based on your own sense of look and style. Skins are YAML files, that enable a user to change the K9s presentation layer. Skin files live in your `$XDG_CONFIG_HOME/k9s` folder. You can specify a general skin file `skin.yml` that applies to all your clusters. You can also skin individual clusters by defining an attribute `skin` in your cluster configuration block. Additionally, if your cluster spans several contexts, you can skin each individual contexts using context_name/skin tuples.
+
+If a skin file exists for your cluster then the skin will be loaded if not the stock skin remains in effect.
+So if your want different K9s look and feel on a per cluster basis and say your cluster is named `fred` then you skin attribute reads `skin: blee` then it must refer to a skin file in `$XDG_CONFIG_HOME/k9s/skins/blee.yml`. Below is a sample skin file, more skins are available in the [skins](https://github.com/derailed/k9s/tree/master/skins) directory in the K9s repo.
 
 Colors can be defined as named colors (see table below) or using an hex representation. To preserve your terminal session background color, we've added a color named `default` to indicate a transparent background color if so desired.
 
@@ -26,6 +29,50 @@ Colors can be defined as named colors (see table below) or using an hex represen
 <div class="note">
   <i class="fas fa-skull"></i> Changes to the skin file layout will occur as more features are added, so thread accordingly!
 </div>
+
+<br/>
+
+## <img src="/assets/sections/examples.png" class="section"/> Skin Configuration
+
+```yaml
+k9s:
+  ...
+  clusters:
+    # Cluster fred display in_the_navy skin when loaded...
+    fred:
+      # Override the default skin and use this skin for this cluster.
+      # NOTE: Just the skin file name to extension!
+      skin: in_the_navy # -> Look for a skin file in ~/.config/k9s/skins/in_the_navy.yml
+      namespace:
+        ...
+      view:
+        active: pod
+      featureGates:
+        nodeShell: false
+      portForwardAddress: localhost
+
+    # Example for cluster spanning multiple contexts.
+    # Cluster:blee/Context:fred display in_the_navy skin since no specific skinContexts match.
+    # Cluster:blee/Context:context_1 displays the red skin when active.
+    blee:
+      # Override the default skin and use this skin for this cluster.
+      # NOTE: Just the skin file name to extension!
+      skin: in_the_navy # -> Look for a skin file in ~/.config/k9s/skins/in_the_navy.yml
+      # When a cluster spans multiple contexts, you can skin each individual contexts
+      # independently using context_name/skin tuples.
+      skinContexts:
+        - name: context_1 # => if context_1 is active the k9s will use the red skin from skins/red.yml
+          skin: red
+        - name: context_2 # => if context_2 is active, then k9s will use one_dark skin in skins/one_dark.yml
+          skin: one_dark
+      namespace:
+        ...
+      view:
+        active: pod
+      featureGates:
+        nodeShell: false
+      portForwardAddress: localhost
+```
 
 <br/>
 

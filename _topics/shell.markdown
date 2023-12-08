@@ -30,17 +30,17 @@ Enabling a node shell on cluster `blee`
 ```yaml
 # $XDG_CONFIG_HOME/k9s/config.yml
 k9s:
+  # You can also further tune the shell pod specification
+  shellPod:
+    image: cool_kid_admin:42
+    namespace: blee
+    limits:
+      cpu: 100m
+      memory: 100Mi
   clusters:
     # Configures node shell on cluster blee
     blee:
       featureGates:
         # You must enable the nodeShell feature gate to enable shelling into nodes
         nodeShell: true
-      # You can also further tune the shell pod specification
-      shellPod:
-        image: cool_kid_admin:42
-        namespace: blee
-        limits:
-          cpu: 100m
-          memory: 100Mi
 ```
