@@ -35,27 +35,28 @@ k9s --readonly
 
 ## <img src="/assets/sections/examples.png" width="auto" height="32"/> Key Bindings
 
-| Action                                                         | Command                       | Comment                                                                |
-| -------------------------------------------------------------- | ----------------------------- | ---------------------------------------------------------------------- |
-| Show active keyboard mnemonics and help                        | `?`                           |                                                                        |
-| Show all available aliases and resources on the cluster        | `ctrl-a` or `:alias`          |                                                                        |
-| To bail out of K9s                                             | `:q`, `ctrl-c`                |                                                                        |
-| View a Kubernetes resource using singular/plural or short-name | `:`po⏎                        | accepts singular, plural, short-name or alias ie pod or pods           |
-| View a Kubernetes resource in a given namespace                | `:`alias namespace⏎           |                                                                        |
-| Filter out a resource view given a filter                      | `/`filter⏎                    | Regex2 supported ie `fred|blee` to filter resources named fred or blee |
-| Inverse regex filer                                            | `/`! filter⏎                  | Keep everything that *doesn't* match. Not implemented for logs.        |
-| Filter resource view by labels                                 | `/`-l label-selector⏎         |                                                                        |
-| Fuzzy find a resource given a filter                           | `/`-f filter⏎                 |                                                                        |
-| Bails out of view/command/filter mode                          | `<esc>`                       |                                                                        |
-| Key mapping to describe, view, edit, view logs,...             | `d`,`v`, `e`, `l`,...         |                                                                        |
-| To view and switch to another Kubernetes context               | `:`ctx⏎                       |                                                                        |
-| To view and switch to another Kubernetes context               | `:`ctx context-name⏎          |                                                                        |
-| To view and switch to another Kubernetes namespace             | `:`ns⏎                        |                                                                        |
-| To view all saved resources                                    | `:`screendump or sd⏎          |                                                                        |
-| To delete a resource (TAB and ENTER to confirm)                | `ctrl-d`                      |                                                                        |
-| To kill a resource (no confirmation dialog!)                   | `ctrl-k`                      |                                                                        |
-| Toggle Wide Columns                                            | `ctrl-w`                      | Equivalent to `kubectl ... -o wide`                                    |
-| Toggle Error State                                             | `ctrl-z`                      | View resources in error condition                                      |
-| Launch pulses view                                             | `:`pulses or pu⏎              |                                                                        |
-| Launch XRay view                                               | `:`xray RESOURCE [NAMESPACE]⏎ | RESOURCE can be one of po, svc, dp, rs, sts, ds, NAMESPACE is optional |
-| Launch Popeye view                                             | `:`popeye or pop⏎             | See https://popeyecli.io                                               |
+| Action                                                                          | Command                       | Comment                                                                |
+|---------------------------------------------------------------------------------|-------------------------------|------------------------------------------------------------------------|
+| Show active keyboard mnemonics and help                                         | `?`                           |                                                                        |
+| Show all available resource alias                                               | `ctrl-a`                      |                                                                        |
+| To bail out of K9s                                                              | `:q`, `ctrl-c`                |                                                                        |
+| View a Kubernetes resource using singular/plural or short-name                  | `:`pod⏎                       | accepts singular, plural, short-name or alias ie pod or pods           |
+| View a Kubernetes resource in a given namespace                                 | `:`pod ns-x⏎                  |                                                                        |
+| View filtered pods (New v0.30.0!)                                               | `:`pod /fred⏎                 | View all pods filtered by fred                                         |
+| View labeled pods (New v0.30.0!)                                                | `:`pod app=fred,env=dev⏎      | View all pods with labels matching app=fred and env=dev                |
+| View pods in a given context (New v0.30.0!)                                     | `:`pod @ctx1⏎                 | View all pods in context ctx1. Switches out your current k9s context!  |
+| Filter out a resource view given a filter                                       | `/`filter⏎                    | Regex2 supported ie `fred|blee` to filter resources named fred or blee |
+| Inverse regex filter                                                            | `/`! filter⏎                  | Keep everything that *doesn't* match.                                  |
+| Filter resource view by labels                                                  | `/`-l label-selector⏎         |                                                                        |
+| Fuzzy find a resource given a filter                                            | `/`-f filter⏎                 |                                                                        |
+| Bails out of view/command/filter mode                                           | `<esc>`                       |                                                                        |
+| Key mapping to describe, view, edit, view logs,...                              | `d`,`v`, `e`, `l`,...         |                                                                        |
+| To view and switch to another Kubernetes context (Pod view)                     | `:`ctx⏎                       |                                                                        |
+| To view and switch directly to another Kubernetes context (Last used view)      | `:`ctx context-name⏎          |                                                                        |
+| To view and switch to another Kubernetes namespace                              | `:`ns⏎                        |                                                                        |
+| To view all saved resources                                                     | `:`screendump or sd⏎          |                                                                        |
+| To delete a resource (TAB and ENTER to confirm)                                 | `ctrl-d`                      |                                                                        |
+| To kill a resource (no confirmation dialog, equivalent to kubectl delete --now) | `ctrl-k`                      |                                                                        |
+| Launch pulses view                                                              | `:`pulses or pu⏎              |                                                                        |
+| Launch XRay view                                                                | `:`xray RESOURCE [NAMESPACE]⏎ | RESOURCE can be one of po, svc, dp, rs, sts, ds, NAMESPACE is optional |
+| Launch Popeye view                                                              | `:`popeye or pop⏎             | See [popeye](#popeye)                                                  |

@@ -14,9 +14,11 @@ layout: section
 
 ## <img src="/assets/sections/overview.png" width="auto" height="32"/> Overview
 
-On RBAC enabled clusters, you would need to give your users/groups capabilities so that they can use K9s to explore their Kubernetes cluster. K9s needs minimally read privileges at both the cluster and namespace level to display resources and metrics.
+On RBAC enabled clusters, you would need to give your users/groups capabilities so that they can use K9s to explore their Kubernetes cluster.
+K9s needs minimally read privileges at both the cluster and namespace level to display resources and metrics.
 
-These rules below are just suggestions. You will need to customize them based on your environment policies. If you need to edit/delete resources extra Fu will be necessary.
+These rules below are just suggestions. You will need to customize them based on your environment policies.
+If you need to edit/delete resources extra Fu will be necessary.
 
 <br/>
 <div class="note">

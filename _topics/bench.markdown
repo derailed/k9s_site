@@ -16,7 +16,7 @@ layout: section
 
 K9s integrates [Hey](https://github.com/rakyll/hey) from the brilliant and super talented [Jaana Dogan](https://github.com/rakyll). `Hey` is a CLI tool to benchmark HTTP endpoints similar to AB bench. This preliminary feature currently supports benchmarking port-forwards and services (Read the paint on this is way fresh!).
 
-To setup a port-forward, you will need to navigate to the PodView, select a pod and a container that exposes a given port. Using `SHIFT-F` a dialog comes up to allow you to specify a local port to forward to. Once acknowledged, you can navigate to the PortForward view (alias `pf`) listing out your active port-forwards. Selecting a port-forward and using `CTRL-B` will run a benchmark on that HTTP endpoint. To view the results of your benchmark runs, go to the Benchmarks view (alias `be`). You should now be able to select a benchmark and view the run stats details by pressing `<ENTER>`. NOTE: Port-forwards only last for the duration of the K9s session and will be terminated upon exit.
+To setup a port-forward, you will need to navigate to the PodView, select a pod and a container that exposes a given port. Using `SHIFT-F` a dialog comes up to allow you to specify a local port to forward to. Once acknowledged, you can navigate to the PortForward view (alias `pf`) listing out your active port-forwards. Selecting a port-forward and using `b` will run a benchmark on that HTTP endpoint. To view the results of your benchmark runs, go to the Benchmarks view (alias `be`). You should now be able to select a benchmark and view the run stats details by pressing `<ENTER>`. NOTE: Port-forwards only last for the duration of the K9s session and will be terminated upon exit.
 
 Initially, the benchmarks will run with the following defaults:
 
@@ -25,7 +25,8 @@ Initially, the benchmarks will run with the following defaults:
 * HTTP Verb: GET
 * Path: /
 
-The PortForward view is backed by a new K9s config file namely: `$XDG_CONFIG_HOME/k9s/bench-<my_context>.yml`. Each cluster you connect to will have its own bench config file. Changes to this file should automatically update the PortForward view to indicate how you want to run your benchmarks.
+The PortForward view is backed by a benchmarks config file namely: `$XDG_DATA_HOME/k9s/clusters/clusterX/contextY/benchmarks.yaml`. Each context you connect to will have its own benchmarks config file. Changes to this file should automatically update the PortForward view to indicate how you want to run your benchmarks.
+The resulting benchmark reports are stored in `$XDG_STATE_HOME/k9s/clusters/clusterX/contextY/xxx.txt`
 
 <br/>
 <div class="note">
@@ -37,12 +38,12 @@ The PortForward view is backed by a new K9s config file namely: `$XDG_CONFIG_HOM
 ## <img src="/assets/sections/examples.png" width="auto" height="32"/> Example
 
 ```yaml
-# $XDG_CONFIG_HOME/k9s/bench-<my_k8s_context>.yml
+# $XDG_DATA_HOME/k9s/clusters/clusterX/contextY/benchmarks.yaml
 benchmarks:
   # Indicates the default concurrency and number of requests setting if a container or service rule does not match.
   defaults:
     # One concurrent connection
-    concurrency: 2
+    concurrency: 1
     # Number of requests that will be sent to an endpoint
     requests: 1000
   containers:

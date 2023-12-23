@@ -14,7 +14,11 @@ layout: section
 
 ## <img src="/assets/sections/overview.png" width="auto" height="32"/> Overview
 
-K9s allows you to extend your command line and tooling by defining your very own cluster commands via plugins. K9s will look at `$XDG_CONFIG_HOME/k9s/plugin.yml` to locate all available plugins. A plugin is defined as follows:
+K9s allows you to extend your command line and tooling by defining your very own cluster commands via plugins.
+K9s looks at `$XDG_CONFIG_HOME/k9s/plugins.yaml` to locate all available plugins.
+You can further extend plugins behavior in a context specific configuration using `$XDG_DATA_HOME/k9s/clusters/clusterX/contextY/plugins.yaml`.
+
+A plugin is defined as follows:
 
 * Shortcut option represents the key combination a user would type to activate the plugin
 * Description will be printed next to the shortcut in the k9s menu
@@ -51,7 +55,7 @@ NOTE: Take a look at some of the [Community Custom Plugins](https://github.com/d
 This defines a plugin for viewing logs on a selected pod using `ctrl-l` mnemonic.
 
 ```yaml
-# $XDG_CONFIG_HOME/k9s/plugin.yml
+# $XDG_CONFIG_HOME/k9s/plugins.yaml
 plugin:
 
   # Defines a plugin to provide a `ctrl-l` shortcut to tail the logs while in pod view.

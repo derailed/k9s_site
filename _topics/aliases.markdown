@@ -26,8 +26,19 @@ K9s command mode supports autosuggestions. Suggestions are based on supported Ku
 
 ## <img src="/assets/sections/overview.png" width="auto" height="32"/> Aliases
 
-In K9s, you can define your very own command aliases (short-names) to access your resources. In your `$XDG_CONFIG_HOME/k9s` define a file called `alias.yml`. A K9s alias defines pairs of alias:gvr. A gvr (Group/Version/Resource) represents a fully qualified Kubernetes resource identifier. Here is an example of an alias file:
+In K9s, you can define your very own command aliases (short-names) to access your resources. In your `$XDG_CONFIG_HOME/k9s` define a file called `aliases.yaml`.
+A K9s alias defines pairs of alias:gvr or alias:command. A gvr (Group/Version/Resource) represents a fully qualified Kubernetes resource identifier.
+The command can be any commands that you would normally use while in command prompt mode.
 
+Aliases can be defined a two levels: global and context specific. At the global level you would create a file in `$XDG_CONFIG_HOME/k9s/aliases.yaml`.
+For context specific aliases, you can define `$XDG_DATA_HOME/k9s/clusters/clusterX/contextY/aliases.yaml`
+
+<br/>
+<div class="note">
+  <i class="fas fa-skull"></i> As of v0.30.0 this file must have a `.yaml" extension. Also note the file name is pluralize as well as the top section of the section aka `aliases`
+</div>
+
+Here is an example of an alias file:
 
 <br/>
 
@@ -36,20 +47,17 @@ In K9s, you can define your very own command aliases (short-names) to access you
 Using this alias file, you can now type pp/crb to list pods or ClusterRoleBindings respectively.
 
 ```yaml
-# $XDG_CONFIG_HOME/k9s/alias.yml
-alias:
+# $XDG_CONFIG_HOME/k9s/aliases.yaml
+aliases:
   # Use pp as an alias for Pod
   pp: v1/pods
-
-  # Use crb as an alias for ClusterRoleBinding
-  crb: rbac.authorization.k8s.io/v1/clusterrolebindings
-
-  # Use cr as an alias for ClusterRole
-  cr: rbac.authorization.k8s.io/v1/clusterroles
 
   # Use dep as an alias for Deployments
   dep: apps/v1/deployments
 
   # Use fred as an alias for CRD Frederick
   fred: acme.io/v1alpha1/fredericks
+
+  # Defines a pos alias for a command listing all pod in kube-system matching labels app=fred and blee=duh
+  pos: pod kube-system app=fred,blee=duh
 ```

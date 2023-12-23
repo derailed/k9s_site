@@ -14,6 +14,8 @@ layout: section
 
 ## <img src="/assets/sections/overview.png" width="auto" height="32"/> Assets
 
+* [K9s v0.30.0 Sneak peek](https://youtu.be/mVBc1XneRJ4)
+* [K9s v0.29.0 VulScan](https://youtu.be/ULkl0MsaidU)
 * [K9s v0.21.X](https://youtu.be/wG8KCwDAhnw)
 * [K9s v0.19.X](https://youtu.be/kj-WverKZ24)
 * [K9s v0.18.0](https://www.youtube.com/watch?v=zMnD5e53yRw)
