@@ -71,8 +71,8 @@ k9s:
   # ImageScan config changed from v0.29.0!
   imageScans:
     enable: false
-    # Now figures exclusions ie blacklist namespaces or specific workload labels
-    blackList:
+    # Exclusions excludes namespaces or specific workload labels
+    exclusions:
       # Exclude the following namespaces for image vulscans!
       namespaces:
         - kube-system
