@@ -56,7 +56,7 @@ This defines a plugin for viewing logs on a selected pod using `ctrl-l` mnemonic
 
 ```yaml
 # $XDG_CONFIG_HOME/k9s/plugins.yaml
-plugin:
+plugins:
 
   # Defines a plugin to provide a `ctrl-l` shortcut to tail the logs while in pod view.
   fred:
