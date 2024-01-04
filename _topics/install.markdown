@@ -64,3 +64,10 @@ K9s is available on Linux, macOS and Windows platforms.
     ```shell
     export TERM=xterm-256color
     ```
+
+* In order to issue resource edit commands make sure your EDITOR and/or KUBE_EDITOR env vars are set.
+
+    ```shell
+    # Kubectl edit command will use this env var.
+    export KUBE_EDITOR=my_fav_editor
+    ```

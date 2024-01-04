@@ -18,6 +18,14 @@ K9s leverages [XDG](https://specifications.freedesktop.org/basedir-spec/basedir-
 The default configuration will vary across operating system so be sure to read up on the default location if you choose not to set that environment variable.
 The main configuration file is named `config.yaml` and stores various K9s specific bits.
 
+For information on the default locations for your OS please see [this link](https://github.com/adrg/xdg/blob/master/README.md). If you are still confused a quick `k9s info` will reveal where k9s is loading its configurations from.
+
+  | Unix            | macOS                              | Windows               |
+  |-----------------|------------------------------------|-----------------------|
+  | `~/.config/k9s` | `~/Library/Application Support/k9s` | `%LOCALAPPDATA%\k9s`  |
+
+Alternatively, you can set `K9S_CONFIG_DIR` to tell K9s the directory location to pull its configurations from.
+
 <br/>
 <div class="note">
   <i class="fas fa-skull"></i> This is still in flux and will change while in pre-release stage!
