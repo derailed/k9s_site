@@ -101,7 +101,7 @@ k9s:
     # Represents how far to go back in the log timeline in seconds. Setting to -1 will tail logs. Default is -1.
     sinceSeconds: 300
     # Go full screen while displaying logs. Default false
-    fullScreenLogs: false
+    fullScreen: false
     # Toggles log line wrap. Default false
     textWrap: false
     # Toggles log line timestamp info. Default false

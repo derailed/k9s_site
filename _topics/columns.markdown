@@ -29,25 +29,24 @@ Here is a sample views configuration that customize a pods and services views.
 
 ```yaml
 # $XDG_CONFIG_HOME/k9s/views.yaml
-k9s:
-  views:
-    # Alters the pod view column layout. Uses GVR as key
-    v1/pods:
-      columns:
-        - AGE
-        - NAMESPACE
-        - NAME
-        - IP
-        - NODE
-        - STATUS
-        - READY
+views:
+  # Alters the pod view column layout. Uses GVR as key
+  v1/pods:
+    columns:
+      - AGE
+      - NAMESPACE
+      - NAME
+      - IP
+      - NODE
+      - STATUS
+      - READY
 
-    # Alters the service view column layout
-    v1/services:
-      columns:
-        - AGE
-        - NAMESPACE
-        - NAME
-        - TYPE
-        - CLUSTER-IP
+  # Alters the service view column layout
+  v1/services:
+    columns:
+      - AGE
+      - NAMESPACE
+      - NAME
+      - TYPE
+      - CLUSTER-IP
 ```
