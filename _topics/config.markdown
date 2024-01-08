@@ -58,6 +58,8 @@ k9s:
     logoless: false
     # Set to true to hide K9s crumbs. Default false
     crumbsless: false
+    # Toggles reactive UI. This option provide for watching on disk artifacts changes and update the UI live  Defaults to false.
+    reactive: false
     # Toggles icons display as not all terminal support these chars.
     noIcons: false
   # Toggles whether k9s should check for the latest revision from the Github repository releases. Default is false.
