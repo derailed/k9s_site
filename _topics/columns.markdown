@@ -32,6 +32,8 @@ Here is a sample views configuration that customize a pods and services views.
 views:
   # Alters the pod view column layout. Uses GVR as key
   v1/pods:
+    # Overrides default sort column
+    sortColumn: AGE:asc
     columns:
       - AGE
       - NAMESPACE
