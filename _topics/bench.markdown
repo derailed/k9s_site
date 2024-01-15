@@ -73,8 +73,8 @@ benchmarks:
       requests: 500
       http:
         method: GET
-        # This setting will depend on whether service is ModePort or LoadBalancer. NodePort may require vendor port tunneling setting.
-        # Set this to a node if ModePort or LB if applicable. IP or dns name.
+        # This setting will depend on whether service is NodePort or LoadBalancer. NodePort may require vendor port tunneling setting.
+        # Set this to a node if NodePort or LB if applicable. IP or dns name.
         host: 1.2.3.4
         path: /bumblebeetuna
       auth:
