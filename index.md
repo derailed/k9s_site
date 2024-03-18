@@ -118,6 +118,6 @@ K9s sits on top of many open source projects and libraries. Our *sincere* apprec
 ---
 <img class="mid-align" src="/assets/imhotep_logo.png" width="32" height="auto"/>
 <span class="mid-align">
-  © 2020 Imhotep Software LLC. All materials licensed under
+  © 2024 Imhotep Software LLC. All materials licensed under
 </span>
 <a class="mid-align" href="http://www.apache.org/licenses/LICENSE-2.0">Apache v2.0</a>

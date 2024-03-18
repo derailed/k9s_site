@@ -42,9 +42,9 @@ k9s --readonly
 | To bail out of K9s                                                              | `:q`, `ctrl-c`                |                                                                        |
 | View a Kubernetes resource using singular/plural or short-name                  | `:`pod⏎                       | accepts singular, plural, short-name or alias ie pod or pods           |
 | View a Kubernetes resource in a given namespace                                 | `:`pod ns-x⏎                  |                                                                        |
-| View filtered pods (New v0.30.0!)                                               | `:`pod /fred⏎                 | View all pods filtered by fred                                         |
-| View labeled pods (New v0.30.0!)                                                | `:`pod app=fred,env=dev⏎      | View all pods with labels matching app=fred and env=dev                |
-| View pods in a given context (New v0.30.0!)                                     | `:`pod @ctx1⏎                 | View all pods in context ctx1. Switches out your current k9s context!  |
+| View filtered pods                                                              | `:`pod /fred⏎                 | View all pods filtered by fred                                         |
+| View labeled pods                                                               | `:`pod app=fred,env=dev⏎      | View all pods with labels matching app=fred and env=dev                |
+| View pods in a given context                                                    | `:`pod @ctx1⏎                 | View all pods in context ctx1. Switches out your current k9s context!  |
 | Filter out a resource view given a filter                                       | `/`filter⏎                    | Regex2 supported ie `fred|blee` to filter resources named fred or blee |
 | Inverse regex filter                                                            | `/`! filter⏎                  | Keep everything that *doesn't* match.                                  |
 | Filter resource view by labels                                                  | `/`-l label-selector⏎         |                                                                        |
@@ -59,4 +59,3 @@ k9s --readonly
 | To kill a resource (no confirmation dialog, equivalent to kubectl delete --now) | `ctrl-k`                      |                                                                        |
 | Launch pulses view                                                              | `:`pulses or pu⏎              |                                                                        |
 | Launch XRay view                                                                | `:`xray RESOURCE [NAMESPACE]⏎ | RESOURCE can be one of po, svc, dp, rs, sts, ds, NAMESPACE is optional |
-| Launch Popeye view                                                              | `:`popeye or pop⏎             | See [popeye](#popeye)                                                  |
