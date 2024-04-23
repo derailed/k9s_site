@@ -148,3 +148,9 @@ k9s:
   # Default port forward host
   portForwardAddress: localhost
 ```
+
+## Env variables
+
+You can now override the context portForward default address configuration by setting an env variable that will override all clusters portForward local address using `K9S_DEFAULT_PF_ADDRESS=a.b.c.d`
+
+You can also globally override the context configuration by setting an env variable that will override all clusters node shell gate using `K9S_FG_NODE_SHELL=true|false`
