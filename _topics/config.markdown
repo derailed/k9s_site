@@ -125,7 +125,7 @@ Now looking at a given context configuration i.e cluster-1/context-1/config.yaml
 k9s:
   # The name of the context parent cluster
   cluster: bumblebeetuna
-  readOnly: false          # [New!] you can now single out a given context and make it readonly. Woof!
+  readOnly: false          # [NEW!] you can now single out a given context and make it readonly. Woof!
   skin: in_the_navy        # [NEW!] you can also skin individual contexts. Woof Woof!
   # Tracks namespace configuration
   namespace:
@@ -153,4 +153,4 @@ k9s:
 
 You can now override the context portForward default address configuration by setting an env variable that will override all clusters portForward local address using `K9S_DEFAULT_PF_ADDRESS=a.b.c.d`
 
-You can also globally override the context configuration by setting an env variable that will override all clusters node shell gate using `K9S_FG_NODE_SHELL=true|false`
+You can also globally override the context configuration by setting an env variable that will override all clusters node shell gate using `K9S_FEATURE_GATE_NODE_SHELL=true|false`
