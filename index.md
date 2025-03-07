@@ -56,9 +56,18 @@ K9s is a terminal based UI to interact with your Kubernetes clusters. The aim of
 
 # <i class="fas fa-bullhorn"></i> Sponsor Us!
 
-If you dig this effort and feel K9s is improving your Kubernetes experience and productivity for you or your team, please join our sponsorship program! K9s is complex and and a lot of work, by clicking the [Sponsor button](https://github.com/sponsors/derailed) you can help show your support and appreciation. Alternatively, just simply give us a shoot-out on social as these go a long way in keeping our batteries charged up!
+If you dig this effort and feel K9s is improving your Kubernetes experience and productivity for you or your team, please join our sponsorship program! K9s is complex and demands a lot of work, by clicking the [Sponsor button](https://github.com/sponsors/derailed) you can show your support and appreciation. Alternatively, just simply give us a shoot-out on social as these go a long way in keeping our batteries charged up!
 
-Alternatively, if you dig K9s, please checkout [K9sAlpha](https://k9salpha.io). The `AlphaDog` encompasses things you love about K9s with additional advanced features that will help you further improve your Kubernetes cluster management. K9sAlpha is a paid version of K9s and your contributions is what help us power both offerings. As you may know, K9s and K9sAlpha are not pimped out by big corporations with deep pockets, both projects chew up a lot of our `free` time, so if K9s improves your Kubernetes productivity for you or your company, please consider pitching back!
+## 🥳 Our Rhodium Sponsors!
+
+Below are organizations that have opted to show their support, pay it forward and sponsor K9s.
+
+<br/>
+<a href="https://panfactum.com"><img src="assets/sponsors/panfactum.png" alt="panfactum"></a>
+<br/>
+<br/>
+
+> NOTE! K9s neither vouches for nor endorses these companies or products.
 
 <br/>
 
@@ -75,7 +84,7 @@ Alternatively, if you dig K9s, please checkout [K9sAlpha](https://k9salpha.io). 
     - [Node Shell]({{ "/topics/shell" }})
   - Look
     - [Skins]({{ "/topics/skins" }})
-    - [Resource Columns]({{ "/topics/columns" }})
+    - [Custom Views]({{ "/topics/columns" }})
 - <i class="fas fa-tachometer-alt"/> [Benchmarking]({{ "/topics/bench" }})
 - <i class="fas fa-key"/> [RBAC]({{ "/topics/rbac" }})
 - <i class="fas fa-video"/> [Tutorials]({{ "/topics/video" }})
@@ -118,6 +127,6 @@ K9s sits on top of many open source projects and libraries. Our *sincere* apprec
 ---
 <img class="mid-align" src="/assets/imhotep_logo.png" width="32" height="auto"/>
 <span class="mid-align">
-  © 2024 Imhotep Software LLC. All materials licensed under
+  © 2025 Imhotep Software LLC. All materials licensed under
 </span>
 <a class="mid-align" href="http://www.apache.org/licenses/LICENSE-2.0">Apache v2.0</a>

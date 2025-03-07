@@ -49,6 +49,8 @@ k9s:
   readOnly: false
   # Toggles whether k9s should exit when CTRL-C is pressed. When set to true, you will need to exist k9s via the :quit command. Default is false.
   noExitOnCtrlC: false
+  # Default port forward host
+  portForwardAddress: localhost
   ui: # NOTE! [K9s v0.30.0]
     # Enable mouse support. Default false
     enableMouse: false
@@ -145,8 +147,6 @@ k9s:
   featureGates:
     # Enable/Disable nodeShell
     nodeShell: false
-  # Default port forward host
-  portForwardAddress: localhost
 ```
 
 ## Env variables
