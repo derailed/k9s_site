@@ -87,6 +87,11 @@ views:
       - AGE
       - NAMESPACE|WR
 
+  v1/pods@kube*:                                         # => 🌚 New v0.40.6! You can also specify a namespace using a regular expression.
+    columns:
+      - AGE
+      - NAMESPACE|WR
+
   # Alters the service view column layout
   v1/services:
     columns:
