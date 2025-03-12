@@ -83,11 +83,21 @@ views:
     # Overrides default sort column
     sortColumn: NAME:asc
     columns:
-      - NAME
+      - NAME|WR
       - AGE
-      - NAMESPACE|WR
+
+  v1/pods@fred:                                          # => 🌚 New v0.40.6! Customize columns for a given resource and namespace!
+    columns:
+      - AGE
+      - NAME|WR
 
   v1/pods@kube*:                                         # => 🌚 New v0.40.6! You can also specify a namespace using a regular expression.
+    columns:
+      - NAME
+      - AGE
+      - LABELS
+
+  cool-kid:                                              # => 🌚 New v0.40.8! You can also reference a specific alias and display a custom view for it
     columns:
       - AGE
       - NAMESPACE|WR
