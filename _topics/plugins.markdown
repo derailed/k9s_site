@@ -16,7 +16,16 @@ layout: section
 
 K9s allows you to extend your command line and tooling by defining your very own cluster commands via plugins.
 K9s looks at `$XDG_CONFIG_HOME/k9s/plugins.yaml` to locate all available plugins.
+
+Additionally, K9s scans the following directories for additional plugins:
+
+* `$XDG_CONFIG_HOME/k9s/plugins`
+* `$XDG_DATA_HOME/k9s/plugins`
+* `$XDG_DATA_DIRS/k9s/plugins`
+
 You can further extend plugins behavior in a context specific configuration using `$XDG_DATA_HOME/k9s/clusters/clusterX/contextY/plugins.yaml`.
+
+The plugin file content can be either a single plugin snippet, a collections of snippets or a complete plugins definition (see examples below...).
 
 A plugin is defined as follows:
 
@@ -50,11 +59,12 @@ NOTE: Take a look at some of the [Community Custom Plugins](https://github.com/d
 
 <br/>
 
-## <img src="/assets/sections/examples.png" width="auto" height="32"/> Example
+## <img src="/assets/sections/examples.png" width="auto" height="32"/> Examples
 
 This defines a plugin for viewing logs on a selected pod using `ctrl-l` mnemonic.
 
 ```yaml
+# Define several plugins in a single file in the K9s root configuration
 # $XDG_CONFIG_HOME/k9s/plugins.yaml
 plugins:
 
@@ -80,4 +90,39 @@ plugins:
     - $NAMESPACE
     - --context
     - $CONTEXT
+```
+
+Similarly you can define the plugin above in a directory using either a file per plugin or several plugins per files as follow...
+
+The following defines two plugins namely fred and zorg.
+
+```yaml
+# Multiple plugins in a single file...
+# Note: as of v0.40.9 you can have ad-hoc plugin dirs
+# Loads plugins fred and zorg
+# $XDG_DATA_HOME/k9s/plugins/misc-plugins/blee.yaml
+fred:
+  shortCut: Shift-B
+  description: Bozo
+  scopes:
+  - deploy
+  command: bozo
+
+zorg:
+  shortCut: Shift-Z
+  description: Pod logs
+  scopes:
+  - svc
+  command: zorg
+```
+
+Lastly you can define plugin snippets in their own file. The snippet will be named from the file name. In this case, we define a `bozo` plugin using a plugin snippet.
+
+```yaml
+# $XDG_DATA_HOME/k9s/plugins/schtuff/bozo.yaml
+shortCut: Shift-B
+description: Bozo
+scopes:
+- deploy
+command: bozo
 ```
