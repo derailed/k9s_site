@@ -67,8 +67,6 @@ Below are organizations that have opted to show their support, pay it forward an
 <br/>
 <br/>
 
-> NOTE! K9s neither vouches for nor endorses these companies or products.
-
 <br/>
 
 # <i class="fas fa-book"/> Documentation
