@@ -118,7 +118,7 @@ K9s sits on top of many open source projects and libraries. Our *sincere* apprec
 - <i class="fab fa-twitter fa-2x"/> [@{{ site.twitter }}](https://twitter.com/{{ site.twitter }}?lang=en)
 - <i class="fab fa-github fa-2x"/> [K9s Repo](https://github.com/{{ site.github }})
 - <i class="fab fa-slack fa-2x"/>  [K9ers Slack](https://k9sers.slack.com/)
-- <i class="fab fa-slack-hash fa-2x"/> [K9ers Slack Invite](https://join.slack.com/t/k9sers/shared_invite/enQtOTA5MDEyNzI5MTU0LWQ1ZGI3MzliYzZhZWEyNzYxYzA3NjE0YTk1YmFmNzViZjIyNzhkZGI0MmJjYzhlNjdlMGJhYzE2ZGU1NjkyNTM)
+- <i class="fab fa-slack-hash fa-2x"/> [K9ers Slack Invite](https://join.slack.com/t/k9sers/shared_invite/zt-3360a389v-ElLHrb0Dp1kAXqYUItSAFA)
 
 <br/>
 
