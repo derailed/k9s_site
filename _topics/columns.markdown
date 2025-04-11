@@ -21,6 +21,7 @@ layout: section
 K9s provides for customizing resource columns while in table views. As such you can tell it which columns you would like to display but also which order they should be in.
 
 To surface this feature, you will need to create a new configuration file, namely `$XDG_CONFIG_HOME/k9s/views.yaml`. This file leverages GVR (Group/Version/Resource) to configure the associated table view columns. If no GVR is found for a view the default rendering will take over (ie what we have now). Going wide will add all the remaining columns that are available on the given resource after your custom columns. To boot, you can edit your views config file and tune your resources views live!
+Furthermore, you can tailor your `Custom views` for specific clusters using `$XDG_DATA_HOME/ClusterX/ContextY/views.yaml`
 
 📢 🎉 As of `release v0.40.X` you can specify json parse expressions to further customize your resources rendering.
 
