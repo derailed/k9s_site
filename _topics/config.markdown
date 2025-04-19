@@ -41,12 +41,16 @@ Alternatively, you can set `K9S_CONFIG_DIR` to tell K9s the directory location t
 k9s:
   # Enable periodic refresh of resource browser windows. Default false
   liveViewAutoRefresh: false
-  # Represents ui poll intervals. Default 2secs
+  # Represents ui poll intervals in seconds. Default 2secs
   refreshRate: 2
+  # Overrides the default k8s api server requests timeout. Defaults 120s
+  apiServerTimeout: 15s
   # Number of retries once the connection to the api-server is lost. Default 15.
   maxConnRetry: 5
   # Specifies if modification commands like delete/kill/edit are disabled. Default is false
   readOnly: false
+  # This setting allows users to specify the default view, but it is not set by default.
+  defaultView: ""
   # Toggles whether k9s should exit when CTRL-C is pressed. When set to true, you will need to exist k9s via the :quit command. Default is false.
   noExitOnCtrlC: false
   # Default port forward host
@@ -62,7 +66,7 @@ k9s:
     crumbsless: false
     # Toggles reactive UI. This option provide for watching on disk artifacts changes and update the UI live  Defaults to false.
     reactive: false
-    # Toggles icons display as not all terminal support these chars.
+    # Toggles icons display as not all terminal support these chars. Default: true
     noIcons: false
   # Toggles whether k9s should check for the latest revision from the Github repository releases. Default is false.
   skipLatestRevCheck: false
