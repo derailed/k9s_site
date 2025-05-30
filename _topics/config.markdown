@@ -51,7 +51,7 @@ k9s:
   readOnly: false
   # This setting allows users to specify the default view, but it is not set by default.
   defaultView: ""
-  # Toggles whether k9s should exit when CTRL-C is pressed. When set to true, you will need to exist k9s via the :quit command. Default is false.
+  # Toggles whether k9s should exit when CTRL-C is pressed. When set to true, you will need to exit k9s via the :quit command. Default is false.
   noExitOnCtrlC: false
   # Default port forward host
   portForwardAddress: localhost
