@@ -35,6 +35,8 @@ K9s is available on Linux, macOS and Windows platforms.
    brew install derailed/k9s/k9s
    # Via PacMan
    pacman -S k9s
+   # Via deb-get
+   deb-get install k9s
    ```
 
 * Windows
