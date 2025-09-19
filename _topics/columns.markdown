@@ -89,11 +89,6 @@ views:
       - NAME|WR
       - AGE
 
-  v1/pods@fred:                                          # => 🌚 New v0.40.6! Customize columns for a given resource and namespace!
-    columns:
-      - AGE
-      - NAME|WR
-
   v1/pods@kube*:                                         # => 🌚 New v0.40.6! You can also specify a namespace using a regular expression.
     columns:
       - NAME
