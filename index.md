@@ -21,7 +21,7 @@ K9s is a terminal based UI to interact with your Kubernetes clusters. The aim of
   - Handles both Kubernetes standard resources as well as custom resource definitions.
 
 - Cluster Metrics
-  - Tracks real-time metrics associates with resources such as pods, containers and nodes.
+  - Tracks real-time metrics associated with resources such as pods, containers and nodes.
 
 - Power Users Welcome!
   - Provides standard cluster management commands such as logs, scaling, port-forwards, restarts...
