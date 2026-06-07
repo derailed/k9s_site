@@ -1,0 +1,165 @@
+---
+title: Commands
+description: K9s CLI arguments, keyboard shortcuts, and command/filter modes.
+---
+
+import { Aside } from "@astrojs/starlight/components";
+
+## CLI Arguments
+
+K9s CLI comes with a few arguments that you can use to launch the tool with different configuration.
+
+```shell
+# List all available CLI options
+k9s help
+# Get info about K9s runtime (logs, configs, etc..)
+k9s info
+# Run K9s in a given namespace.
+k9s -n mycoolns
+# Run K9s and launch in pod view via the pod command.
+k9s -c pod
+# Start K9s in a non default KubeConfig context
+k9s --context coolCtx
+# Start K9s in readonly mode - with all modification commands disabled
+k9s --readonly
+```
+
+### Common flags
+
+| Flag                | Short | Description                                                  |
+| ------------------- | ----- | ------------------------------------------------------------ |
+| `--namespace`       | `-n`  | Start in the given namespace                                 |
+| `--all-namespaces`  | `-A`  | Start across all namespaces                                  |
+| `--command`         | `-c`  | Start in the given command/resource view (e.g. `pod`)        |
+| `--context`         |       | Start in a specific KubeConfig context                       |
+| `--kubeconfig`      |       | Path to the KubeConfig file                                  |
+| `--refresh`         | `-r`  | UI refresh rate in seconds (default `2`)                     |
+| `--logLevel`        | `-l`  | Log level: `debug`, `info`, `warn`, `error` (default `info`) |
+| `--logFile`         |       | Path to the K9s log file                                     |
+| `--readonly`        |       | Disable all modification commands (delete/kill/edit/...)     |
+| `--write`           |       | Force read-write mode (overrides a read-only config)         |
+| `--headless`        |       | Hide the K9s header                                          |
+| `--logoless`        |       | Hide the K9s logo                                            |
+| `--crumbsless`      |       | Hide the breadcrumbs                                         |
+| `--splashless`      |       | Disable the splash screen on startup                         |
+| `--invert`          |       | Invert skin colors (Oklch lightness inversion)               |
+| `--screen-dump-dir` |       | Directory where K9s writes screen dumps                      |
+
+## Keyboard Shortcuts
+
+### Navigation & global
+
+| Action                                    | Keys                                          |
+| ----------------------------------------- | --------------------------------------------- |
+| Show active keyboard mnemonics and help   | <kbd>?</kbd>                                  |
+| Show all available resource aliases       | <kbd>Ctrl</kbd>+<kbd>A</kbd>                  |
+| Open command prompt                       | <kbd>:</kbd>                                  |
+| Go back / forward through command history | <kbd>[</kbd> / <kbd>]</kbd>                   |
+| Go to previous view (also <kbd>q</kbd>)   | <kbd>-</kbd>                                  |
+| Toggle header                             | <kbd>Ctrl</kbd>+<kbd>E</kbd>                  |
+| Toggle breadcrumbs                        | <kbd>Ctrl</kbd>+<kbd>G</kbd>                  |
+| Bail out of view/command/filter mode      | <kbd>Esc</kbd>                                |
+| Bail out of K9s                           | <kbd>:q</kbd> or <kbd>Ctrl</kbd>+<kbd>C</kbd> |
+
+### Table / resource views
+
+| Action                                               | Keys                                                                                |
+| ---------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| Drill in / view resource                             | <kbd>↵</kbd>                                                                        |
+| Describe / view YAML / edit / view logs              | <kbd>d</kbd> / <kbd>y</kbd> / <kbd>e</kbd> / <kbd>l</kbd>                           |
+| Refresh / reload view                                | <kbd>Ctrl</kbd>+<kbd>R</kbd>                                                        |
+| Toggle wide columns                                  | <kbd>Ctrl</kbd>+<kbd>W</kbd>                                                        |
+| Toggle faults-only (show problem resources)          | <kbd>Ctrl</kbd>+<kbd>Z</kbd>                                                        |
+| Mark / mark range / clear marks                      | <kbd>Space</kbd> / <kbd>Ctrl</kbd>+<kbd>Space</kbd> / <kbd>Ctrl</kbd>+<kbd>\\</kbd> |
+| Copy name(s) to clipboard                            | <kbd>c</kbd>                                                                        |
+| Save view to a screen dump                           | <kbd>Ctrl</kbd>+<kbd>S</kbd>                                                        |
+| Delete (<kbd>Tab</kbd> then <kbd>↵</kbd> to confirm) | <kbd>Ctrl</kbd>+<kbd>D</kbd>                                                        |
+| Kill a resource (no confirmation)                    | <kbd>Ctrl</kbd>+<kbd>K</kbd>                                                        |
+| Sort by Name                                         | <kbd>Shift</kbd>+<kbd>N</kbd>                                                       |
+| Sort by Age                                          | <kbd>Shift</kbd>+<kbd>A</kbd>                                                       |
+| Sort by Status                                       | <kbd>Shift</kbd>+<kbd>S</kbd>                                                       |
+| Sort by Namespace                                    | <kbd>Shift</kbd>+<kbd>P</kbd>                                                       |
+| Sort by the selected column                          | <kbd>Shift</kbd>+<kbd>O</kbd>                                                       |
+| Switch namespace (favorites)                         | <kbd>0</kbd>…<kbd>9</kbd>                                                           |
+| Warp to selection's namespace                        | <kbd>w</kbd>                                                                        |
+| Jump to owner                                        | <kbd>Shift</kbd>+<kbd>J</kbd>                                                       |
+
+### Resource-specific
+
+| Action                                      | Keys                                         | Applies to                                   |
+| ------------------------------------------- | -------------------------------------------- | -------------------------------------------- |
+| Shell / attach into a container             | <kbd>s</kbd> / <kbd>a</kbd>                  | Pods, Containers                             |
+| Node shell                                  | <kbd>s</kbd>                                 | Nodes (requires `nodeShell` feature gate)    |
+| Cordon / uncordon / drain                   | <kbd>c</kbd> / <kbd>u</kbd> / <kbd>r</kbd>   | Nodes                                        |
+| Scale                                       | <kbd>s</kbd>                                 | Deployments, StatefulSets, ReplicaSets, HPAs |
+| Restart                                     | <kbd>r</kbd>                                 | Deployments, DaemonSets, StatefulSets        |
+| Set image                                   | <kbd>i</kbd>                                 | Workloads                                    |
+| Port-forward / show port-forwards           | <kbd>Shift</kbd>+<kbd>F</kbd> / <kbd>f</kbd> | Pods, Containers                             |
+| Trigger / suspend a CronJob                 | <kbd>t</kbd> / <kbd>s</kbd>                  | CronJobs                                     |
+| Decode a Secret                             | <kbd>x</kbd>                                 | Secrets                                      |
+| Show vulnerabilities / sort vulnerabilities | <kbd>v</kbd> / <kbd>Shift</kbd>+<kbd>V</kbd> | Pods/Containers (image scans)                |
+| Run / stop a benchmark                      | <kbd>b</kbd>                                 | Services, Port-forwards                      |
+
+### Logs view
+
+| Action                                      | Keys                          |
+| ------------------------------------------- | ----------------------------- |
+| Tail / since presets (1m, 5m, 15m, 30m, 1h) | <kbd>0</kbd>…<kbd>6</kbd>     |
+| Toggle autoscroll                           | <kbd>s</kbd>                  |
+| Toggle timestamps / text wrap               | <kbd>t</kbd> / <kbd>w</kbd>   |
+| Toggle column lock                          | <kbd>Shift</kbd>+<kbd>L</kbd> |
+| Toggle all containers                       | <kbd>a</kbd>                  |
+| Toggle fullscreen                           | <kbd>f</kbd>                  |
+| Clear log buffer                            | <kbd>Shift</kbd>+<kbd>C</kbd> |
+| Mark log line                               | <kbd>m</kbd>                  |
+| Copy logs                                   | <kbd>c</kbd>                  |
+| Save logs                                   | <kbd>Ctrl</kbd>+<kbd>S</kbd>  |
+
+<Aside type="tip">
+  **Namespace Warp:** From a namespaced resource, press <kbd>w</kbd> to jump to
+  all resources of that kind living in the selected item's namespace.
+</Aside>
+
+## Command Mode
+
+Press <kbd>:</kbd> to open the command prompt, type a command, and press <kbd>↵</kbd> to run it. Use it to jump to a resource view or switch your context and namespace.
+
+| Command                      | Description                                                                     |
+| ---------------------------- | ------------------------------------------------------------------------------- |
+| `:pod`                       | View a resource by its singular, plural, short-name, or alias                   |
+| `:pod ns-x`                  | View a resource in the `ns-x` namespace                                         |
+| `:pod /fred`                 | View pods, pre-filtered by `fred`                                               |
+| `:pod app=fred,env=dev`      | View pods matching labels `app=fred` and `env=dev`                              |
+| `:pod @ctx1`                 | View pods in context `ctx1` (also switches your active context)                 |
+| `:ctx`                       | List contexts and switch to another                                             |
+| `:ctx context-name`          | Switch directly to a named context                                              |
+| `:ns`                        | List namespaces and switch to another                                           |
+| `:screendump` or `:sd`       | View all saved resources                                                        |
+| `:pulses` or `:pu`           | Launch the Pulses view                                                          |
+| `:xray RESOURCE [NAMESPACE]` | Launch the XRay view (`po`, `svc`, `dp`, `rs`, `sts`, `ds`; namespace optional) |
+| `:workload` or `:wk`         | Launch the aggregated Workloads view                                            |
+| `:pf`                        | List active port-forwards                                                       |
+| `:benchmark` or `:bench`     | View benchmark run results                                                      |
+| `:can SUBJECT`               | RBAC check (e.g. `can u:fred`, `can g:devs`, `can s:default:sa`)                |
+| `:rbac`, `:users`, `:groups` | RBAC viewer for roles, users, and groups                                        |
+| `:dir PATH` or `:ls`         | Browse a local directory of manifests                                           |
+| `:helm` or `:hm`             | List Helm releases                                                              |
+| `:alias` or `:a`             | List all resource aliases                                                       |
+
+<Aside type="caution">
+  Switching context with `:ctx` (or `:pod @ctx1`) changes your **active k9s
+  context**, not just the current view.
+</Aside>
+
+The command prompt also offers autosuggestions based on resource names, short names, and your aliases. See [Aliases](../aliases/) for details.
+
+## Filter Mode
+
+Press <kbd>/</kbd> to filter the resources in the current view, then press <kbd>↵</kbd>. Unlike command mode, filters refine what is already on screen rather than navigating to a new view.
+
+| Filter               | Description                                                   |
+| -------------------- | ------------------------------------------------------------- |
+| `/filter`            | Filter the current view (regex2 supported, e.g. `fred\|blee`) |
+| `/! filter`          | Inverse filter — keep everything that _doesn't_ match         |
+| `/-l label-selector` | Filter the current view by labels                             |
+| `/-f filter`         | Fuzzy-find a resource within the current view                 |

@@ -1,0 +1,289 @@
+---
+// Renders the K9s named-color reference as hue-grouped swatches.
+// Each swatch uses the CSS named color itself as its background so users
+// can see the actual color next to the name they put in their skin YAML.
+const groups: { label: string; colors: string[] }[] = [
+  {
+    label: "Reds & Pinks",
+    colors: [
+      "maroon",
+      "red",
+      "crimson",
+      "firebrick",
+      "indianred",
+      "darkred",
+      "salmon",
+      "lightsalmon",
+      "darksalmon",
+      "coral",
+      "lightcoral",
+      "tomato",
+      "orangered",
+      "deeppink",
+      "hotpink",
+      "pink",
+      "lightpink",
+      "palevioletred",
+      "mediumvioletred",
+      "rosybrown",
+      "mistyrose",
+    ],
+  },
+  {
+    label: "Oranges & Browns",
+    colors: [
+      "orange",
+      "darkorange",
+      "peru",
+      "chocolate",
+      "saddlebrown",
+      "sienna",
+      "brown",
+      "sandybrown",
+      "tan",
+      "burlywood",
+      "navajowhite",
+      "wheat",
+      "moccasin",
+      "peachpuff",
+      "bisque",
+      "blanchedalmond",
+      "papayawhip",
+    ],
+  },
+  {
+    label: "Yellows & Golds",
+    colors: [
+      "yellow",
+      "gold",
+      "goldenrod",
+      "darkgoldenrod",
+      "khaki",
+      "darkkhaki",
+      "palegoldenrod",
+      "lemonchiffon",
+      "lightyellow",
+      "lightgoldenrodyellow",
+      "cornsilk",
+      "beige",
+      "olive",
+      "olivedrab",
+      "darkolivegreen",
+    ],
+  },
+  {
+    label: "Greens",
+    colors: [
+      "green",
+      "darkgreen",
+      "forestgreen",
+      "seagreen",
+      "mediumseagreen",
+      "darkseagreen",
+      "lightgreen",
+      "palegreen",
+      "lime",
+      "limegreen",
+      "lawngreen",
+      "chartreuse",
+      "greenyellow",
+      "yellowgreen",
+      "springgreen",
+      "mediumspringgreen",
+      "honeydew",
+      "mintcream",
+      "mediumaquamarine",
+      "aquamarine",
+    ],
+  },
+  {
+    label: "Cyans & Teals",
+    colors: [
+      "teal",
+      "aqua",
+      "lightcyan",
+      "darkcyan",
+      "turquoise",
+      "mediumturquoise",
+      "darkturquoise",
+      "paleturquoise",
+      "lightseagreen",
+      "cadetblue",
+      "azure",
+    ],
+  },
+  {
+    label: "Blues",
+    colors: [
+      "blue",
+      "navy",
+      "darkblue",
+      "mediumblue",
+      "midnightblue",
+      "royalblue",
+      "cornflowerblue",
+      "dodgerblue",
+      "deepskyblue",
+      "skyblue",
+      "lightskyblue",
+      "lightblue",
+      "powderblue",
+      "steelblue",
+      "lightsteelblue",
+      "aliceblue",
+      "slateblue",
+      "darkslateblue",
+      "mediumslateblue",
+    ],
+  },
+  {
+    label: "Purples & Violets",
+    colors: [
+      "purple",
+      "indigo",
+      "rebeccapurple",
+      "blueviolet",
+      "darkviolet",
+      "darkorchid",
+      "darkmagenta",
+      "fuchsia",
+      "mediumorchid",
+      "orchid",
+      "mediumpurple",
+      "violet",
+      "plum",
+      "thistle",
+      "lavender",
+      "lavenderblush",
+    ],
+  },
+  {
+    label: "Whites & Off-whites",
+    colors: [
+      "white",
+      "snow",
+      "ghostwhite",
+      "whitesmoke",
+      "floralwhite",
+      "oldlace",
+      "linen",
+      "antiquewhite",
+      "ivory",
+      "seashell",
+    ],
+  },
+  {
+    label: "Grays & Blacks",
+    colors: [
+      "black",
+      "gray",
+      "grey",
+      "darkgray",
+      "darkgrey",
+      "dimgray",
+      "dimgrey",
+      "lightgray",
+      "lightgrey",
+      "silver",
+      "gainsboro",
+      "slategray",
+      "slategrey",
+      "lightslategray",
+      "lightslategrey",
+      "darkslategray",
+      "darkslategrey",
+    ],
+  },
+];
+---
+
+<div class="color-swatches">
+  {
+    groups.map((group) => (
+      <section class="swatch-group">
+        <h3 class="swatch-group-title">{group.label}</h3>
+        <ul class="swatch-grid">
+          {group.colors.map((color) => (
+            <li class="swatch">
+              <span class="chip" style={`background-color: ${color};`} />
+              <code>{color}</code>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))
+  }
+
+  <section class="swatch-group">
+    <h3 class="swatch-group-title">Special</h3>
+    <ul class="swatch-grid">
+      <li class="swatch">
+        <span class="chip chip--transparent" />
+        <code>default</code>
+      </li>
+    </ul>
+    <p class="swatch-note">
+      <code>default</code> keeps your terminal's background (transparent).
+    </p>
+  </section>
+</div>
+
+<style>
+  .swatch-group {
+    margin-block: 1.25rem;
+  }
+  .swatch-group-title {
+    margin-block: 0 0.5rem;
+    font-size: var(--sl-text-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--sl-color-gray-3);
+  }
+  .swatch-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+    gap: 0.35rem 0.75rem;
+  }
+  .swatch {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 0;
+  }
+  .chip {
+    flex: none;
+    width: 1.1rem;
+    height: 1.1rem;
+    border-radius: 4px;
+    border: 1px solid var(--sl-color-gray-4);
+    box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.06);
+  }
+  /* Checkerboard to convey transparency for the K9s `default` color. */
+  .chip--transparent {
+    background-image:
+      linear-gradient(45deg, var(--sl-color-gray-5) 25%, transparent 25%),
+      linear-gradient(-45deg, var(--sl-color-gray-5) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, var(--sl-color-gray-5) 75%),
+      linear-gradient(-45deg, transparent 75%, var(--sl-color-gray-5) 75%);
+    background-size: 0.6rem 0.6rem;
+    background-position:
+      0 0,
+      0 0.3rem,
+      0.3rem -0.3rem,
+      -0.3rem 0;
+  }
+  .swatch code {
+    font-size: var(--sl-text-xs);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .swatch-note {
+    margin-block: 0.5rem 0;
+    font-size: var(--sl-text-xs);
+    color: var(--sl-color-gray-3);
+  }
+</style>

@@ -1,0 +1,128 @@
+---
+title: K9s
+description: Manage Your Kubernetes Clusters In Style. K9s provides a terminal UI to interact with your Kubernetes clusters.
+editUrl: false
+lastUpdated: false
+tableOfContents: false
+hero:
+  title: Who Let The Pods Out?
+  tagline: A terminal UI to interact with your Kubernetes clusters in style.
+  image:
+    file: ../../assets/k9s-hero.png
+    alt: K9s
+  actions:
+    - text: Get Started
+      link: topics/install/
+      icon: right-arrow
+      variant: primary
+    - text: View on GitHub
+      link: https://github.com/derailed/k9s
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid, LinkCard } from "@astrojs/starlight/components";
+import { Image } from "astro:assets";
+import pulses from "../../assets/screens/pulses.png";
+import xray from "../../assets/screens/xray.png";
+import pods from "../../assets/screens/pods.png";
+import logs from "../../assets/screens/logs.png";
+import rbac from "../../assets/screens/rbac.png";
+
+K9s is a terminal based UI to interact with your Kubernetes clusters. The aim of this project is to make it easier to navigate, observe and manage your deployed applications in the wild. K9s continually watches Kubernetes for changes and offers subsequent commands to interact with your observed resources.
+
+## Features
+
+<CardGrid>
+  <Card title="Information At Your Finger Tips" icon="information">
+    Tracks in real-time the activities of resources running in your Kubernetes
+    cluster.
+  </Card>
+  <Card title="Standard or CRD?" icon="document">
+    Handles both Kubernetes standard resources as well as custom resource
+    definitions.
+  </Card>
+  <Card title="Cluster Metrics" icon="bars">
+    Tracks real-time metrics associated with resources such as pods, containers
+    and nodes.
+  </Card>
+  <Card title="Power Users Welcome" icon="rocket">
+    Standard cluster management commands such as logs, scaling, port-forwards
+    and restarts, plus custom aliases, hotkeys, plugins and powerful filtering.
+  </Card>
+  <Card title="Error Zoom" icon="warning">
+    Drill down directly to what's wrong with your cluster's resources.
+  </Card>
+  <Card title="Skinnable and Customizable" icon="puzzle">
+    Define your very own look and feel via K9s skins and arrange which columns
+    to display on a per resource basis.
+  </Card>
+  <Card title="MultiResource Views" icon="seti:default">
+    Provides an overview of your cluster resources via Pulses and XRay views.
+  </Card>
+  <Card title="We've Got Your RBAC" icon="approve-check">
+    View RBAC rules such as cluster/roles and their bindings, and reverse-lookup
+    what a user, group or ServiceAccount can do.
+  </Card>
+  <Card title="Built-in Benchmarking" icon="bars">
+    Benchmark your HTTP services and pods directly from K9s to tune your
+    resource requests and limits.
+  </Card>
+  <Card title="Resource Graph Traversals" icon="random">
+    Easily traverse Kubernetes resources and their associated resources.
+  </Card>
+</CardGrid>
+
+## Sponsor Us!
+
+If you dig this effort and feel K9s is improving your Kubernetes experience and productivity for you or your team, please join our sponsorship program! K9s is complex and demands a lot of work. By clicking the <a href="https://github.com/sponsors/derailed" target="_blank" rel="noopener">Sponsor button</a> you can show your support and appreciation. Alternatively, just give us a shout-out on social as these go a long way in keeping our batteries charged up!
+
+## Previews
+
+<Card title="Live Demo">
+  [![asciicast](https://asciinema.org/a/305944.svg)](https://asciinema.org/a/305944)
+</Card>
+
+<CardGrid>
+  <Card title="Pulses">
+    A top level dashboard of the state of affairs of your cluster.
+    <Image src={pulses} alt="K9s Pulses dashboard" loading="lazy" />
+  </Card>
+  <Card title="XRay">
+    Dig in your cluster resources and view their dependencies.
+    <Image src={xray} alt="K9s XRay view" loading="lazy" />
+  </Card>
+  <Card title="Pods">
+    List out your pods status and resource consumption.
+    <Image src={pods} alt="K9s Pods view" loading="lazy" />
+  </Card>
+  <Card title="Logs">
+    View and interact with your container logs.
+    <Image src={logs} alt="K9s Logs view" loading="lazy" />
+  </Card>
+  <Card title="RBAC">
+    View the who/what/how of authorizations on your cluster.
+    <Image src={rbac} alt="K9s RBAC view" loading="lazy" />
+  </Card>
+</CardGrid>
+
+## Get In Touch!
+
+<CardGrid>
+  <LinkCard title="K9s Repo" href="https://github.com/derailed/k9s" />
+  <LinkCard
+    title="@kitesurfer on X"
+    href="https://twitter.com/kitesurfer?lang=en"
+  />
+  <LinkCard title="K9ers Slack" href="https://k9sers.slack.com/" />
+  <LinkCard
+    title="K9ers Slack Invite"
+    href="https://join.slack.com/t/k9sers/shared_invite/zt-3360a389v-ElLHrb0Dp1kAXqYUItSAFA"
+  />
+</CardGrid>
+
+K9s sits on top of many open source projects and libraries. Our _sincere_ appreciation to all the OSS contributors that work nights and weekends to make this project a reality!
+
+---
+
+© 2025 Imhotep Software LLC. All materials licensed under [Apache v2.0](https://www.apache.org/licenses/LICENSE-2.0).

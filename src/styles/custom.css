@@ -1,0 +1,41 @@
+/* K9s custom Starlight styling */
+
+:root {
+  /* Brand accent derived from the old site link/logo colors (#2390ff / #2d54f4) */
+  --sl-color-accent-low: #112a4a;
+  --sl-color-accent: #2671d9;
+  --sl-color-accent-high: #b9d3f6;
+}
+
+:root[data-theme="light"] {
+  --sl-color-accent-low: #c2d8f6;
+  --sl-color-accent: #1f63c0;
+  --sl-color-accent-high: #112a4a;
+}
+
+/* Rounded, shadowed hero image (echoes the old img.pic styling) */
+.hero img {
+  border-radius: 10px;
+}
+
+/* Center and constrain inline preview screenshots in Markdown content */
+.sl-markdown-content img {
+  border-radius: 6px;
+}
+
+/* Keycap styling for <kbd> (Starlight ships none) */
+.sl-markdown-content kbd {
+  display: inline-block;
+  min-width: 1.2em;
+  padding: 0.05em 0.45em;
+  border: 1px solid var(--sl-color-gray-5);
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  background: var(--sl-color-gray-6);
+  color: var(--sl-color-white);
+  font-family: var(--sl-font-system-mono);
+  font-size: 0.8125em;
+  line-height: 1.6;
+  text-align: center;
+  white-space: nowrap;
+}

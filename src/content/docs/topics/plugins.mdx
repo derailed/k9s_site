@@ -1,0 +1,173 @@
+---
+title: Plugins
+description: Extend K9s with your own custom cluster commands via plugins.
+---
+
+import { Aside } from "@astrojs/starlight/components";
+
+## Overview
+
+K9s allows you to extend your command line and tooling by defining your very own cluster commands via plugins.
+K9s looks at `$XDG_CONFIG_HOME/k9s/plugins.yaml` to locate all available plugins.
+
+Additionally, K9s scans the following directories for additional plugins:
+
+- `$XDG_CONFIG_HOME/k9s/plugins`
+- `$XDG_DATA_HOME/k9s/plugins`
+- `$XDG_DATA_DIRS/k9s/plugins`
+
+You can further extend plugins behavior in a context specific configuration using `$XDG_DATA_HOME/k9s/clusters/clusterX/contextY/plugins.yaml`.
+
+The plugin file content can be either a single plugin snippet, a collections of snippets or a complete plugins definition (see examples below...).
+
+A plugin is defined as follows:
+
+- `shortCut` represents the key combination a user would type to activate the plugin.
+- `description` will be printed next to the shortcut in the K9s menu.
+- `scopes` defines a collection of resource names/short-names for the views associated with the plugin. You can specify `all` to provide this shortcut for all views.
+- `command` represents the ad-hoc command the plugin runs upon activation.
+- `background` specifies whether or not the command runs in the background.
+- `args` specifies the various arguments that should apply to the command above.
+- `confirm` shows a confirmation dialog (with the resolved command) before running. Defaults to `true` when `inputs` are defined, `false` otherwise.
+- `dangerous` marks the plugin as dangerous; it is disabled while K9s runs in read-only mode.
+- `override` allows the shortcut to override a built-in K9s key binding.
+- `overwriteOutput` reruns and refreshes the plugin output in place rather than appending.
+- `pipes` specifies a collection of commands to pipe the plugin output through.
+- `inputs` declares interactive prompts collected from the user before the command runs (see below).
+
+### Interactive inputs
+
+As of `v0.50.x`, plugins can prompt for user input before running. Each entry in `inputs` supports:
+
+- `name` — the variable name; exposed to the command/args as `$name`.
+- `label` — the prompt label shown in the dialog.
+- `type` — one of `string`, `number`, `bool`, or `dropdown`.
+- `required` — whether the field must be filled in.
+- `default` — a default value (must be a valid option for `dropdown`, `"true"`/`"false"` for `bool`, and numeric for `number`).
+- `options` — the list of selectable values for a `dropdown`.
+
+A maximum of 5 inputs is supported per plugin, and input names must be unique.
+
+K9s does provide additional environment variables for you to customize your plugins arguments. Currently, the available environment variables are as follows:
+
+- `$RESOURCE_GROUP` -- the selected resource group
+- `$RESOURCE_VERSION` -- the selected resource api version
+- `$RESOURCE_NAME` -- the selected resource name
+- `$NAMESPACE` -- the selected resource namespace
+- `$NAME` -- the selected resource name
+- `$CONTAINER` -- the current container if applicable
+- `$FILTER` -- the current filter if any
+- `$KUBECONFIG` -- the KubeConfig location.
+- `$CLUSTER` the active cluster name
+- `$CONTEXT` the active context name
+- `$USER` the active user
+- `$GROUPS` the active groups
+- `$POD` while in a container view
+- `$COL-<RESOURCE_COLUMN_NAME>` use a given column name for a viewed resource. Must be prefixed by `COL-`!
+
+NOTE: Take a look at some of the [Community Custom Plugins](https://github.com/derailed/k9s/tree/master/plugins) contributed by your K9sers friends.
+
+<Aside type="caution">
+  Work in progress... Options and layout may change in future K9s releases as
+  this feature solidifies.
+</Aside>
+
+## Examples
+
+This defines a plugin for viewing logs on a selected pod using `ctrl-l` mnemonic.
+
+```yaml
+# Define several plugins in a single file in the K9s root configuration
+# $XDG_CONFIG_HOME/k9s/plugins.yaml
+plugins:
+  # Defines a plugin to provide a `ctrl-l` shortcut to tail the logs while in pod view.
+  fred:
+    # Define a mnemonic to invoke the plugin
+    shortCut: Ctrl-L
+    # What will be shown on the K9s menu
+    description: Pod logs
+    # Collections of views that support this shortcut. (You can use `all`)
+    scopes:
+      - po
+    # The command to run upon invocation. Can use Krew plugins here too!
+    command: kubectl
+    # Whether or not to run the command in background mode
+    background: false
+    # Defines the command arguments
+    args:
+      - logs
+      - -f
+      - $NAME
+      - -n
+      - $NAMESPACE
+      - --context
+      - $CONTEXT
+```
+
+Similarly you can define the plugin above in a directory using either a file per plugin or several plugins per files as follow...
+
+The following defines two plugins namely fred and zorg.
+
+```yaml
+# Multiple plugins in a single file...
+# Note: as of v0.40.9 you can have ad-hoc plugin dirs
+# Loads plugins fred and zorg
+# $XDG_DATA_HOME/k9s/plugins/misc-plugins/blee.yaml
+fred:
+  shortCut: Shift-B
+  description: Bozo
+  scopes:
+    - deploy
+  command: bozo
+
+zorg:
+  shortCut: Shift-Z
+  description: Pod logs
+  scopes:
+    - svc
+  command: zorg
+```
+
+Lastly you can define plugin snippets in their own file. The snippet will be named from the file name. In this case, we define a `bozo` plugin using a plugin snippet.
+
+```yaml
+# $XDG_DATA_HOME/k9s/plugins/schtuff/bozo.yaml
+shortCut: Shift-B
+description: Bozo
+scopes:
+  - deploy
+command: bozo
+```
+
+## Interactive inputs example
+
+This plugin scales a deployment, prompting the user for the desired replica count (via a `number` input) and asking for confirmation before applying.
+
+```yaml
+# $XDG_CONFIG_HOME/k9s/plugins.yaml
+plugins:
+  scale:
+    shortCut: Shift-S
+    description: Scale
+    # Prompting for inputs implies confirm: true unless overridden.
+    confirm: true
+    scopes:
+      - deploy
+    inputs:
+      - name: replicas
+        label: Replica count
+        type: number
+        required: true
+        default: "1"
+    command: kubectl
+    args:
+      - scale
+      - deployment
+      - $NAME
+      - -n
+      - $NAMESPACE
+      - --replicas
+      - $replicas
+      - --context
+      - $CONTEXT
+```

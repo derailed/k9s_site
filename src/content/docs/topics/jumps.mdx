@@ -1,0 +1,66 @@
+---
+title: Resource Jumps
+description: Define custom navigation shortcuts between CRDs and their related resources.
+---
+
+import { Aside } from "@astrojs/starlight/components";
+
+## Overview
+
+K9s allows you to define custom jump shortcuts between Custom Resource Definitions (CRDs) and their related resources. This feature enables you to quickly drill from one resource to its dependent or associated resources, similar to the built-in "jump to owner" (<kbd>Shift</kbd>+<kbd>J</kbd>) behavior.
+
+By default, K9s provides built-in jumps for standard Kubernetes resources (e.g. Deployment → Pods, Node → Pods). With custom jumps, you can extend this behavior to your own CRDs without modifying the K9s source code.
+
+To use this feature, create a configuration file at `$XDG_CONFIG_HOME/k9s/jumps.yaml`. Once defined, selecting a matching source resource and pressing <kbd>↵</kbd> (Enter) navigates to the configured target resources. The file is reloaded automatically, so you can tune your rules live.
+
+<Aside type="caution">
+  Work in progress... Options and layout may change in future K9s releases as
+  this feature solidifies.
+</Aside>
+
+## Configuration Fields
+
+- **Source GVR** (the map key): the Group/Version/Resource (GVR) of the source CRD, in the format `group/version/resource` (or `version/resource` for core resources).
+- **targetGVR**: the target resource to jump to. Required.
+- **labelSelector** (optional): a Kubernetes label selector to filter the target resources. Supports Go template syntax.
+- **fieldSelector** (optional): a Kubernetes field selector to filter the target resources. Supports Go template syntax.
+- **targetNamespace** (optional): controls namespace behavior:
+  - Empty/omitted (default): use the source resource's namespace (or cluster-scoped if the source is cluster-scoped).
+  - `all`: view resources across all namespaces.
+  - `<namespace-name>`: jump to a specific namespace.
+  - `{{.metadata.namespace}}`: use a template expression to extract the namespace from the source resource.
+
+<Aside type="note">
+  At least one of `labelSelector` or `fieldSelector` must be specified.
+</Aside>
+
+## Template Syntax
+
+Both `labelSelector` and `fieldSelector` support Go template syntax to dynamically reference fields from the selected source resource:
+
+- `{{.metadata.name}}` — the resource name
+- `{{.metadata.namespace}}` — the resource namespace
+- `{{.metadata.labels.key}}` — a specific label value
+- `{{.spec.field}}` — any field from the resource spec
+
+## Examples
+
+```yaml
+# $XDG_CONFIG_HOME/k9s/jumps.yaml
+jumps:
+  # Jump from a custom patch-plan CRD to its associated patch jobs via a field selector.
+  "myoperator.io/v1/patchplans":
+    targetGVR: "myoperator.io/v1/patchjobs"
+    fieldSelector: "spec.patchPlanRef={{.metadata.name}}"
+
+  # Jump from a Karpenter NodePool to the nodes it owns via a label selector.
+  "karpenter.sh/v1/nodepools":
+    targetGVR: "v1/nodes"
+    labelSelector: "karpenter.sh/nodepool={{.metadata.name}}"
+
+  # Jump from a cert-manager Certificate to its backing Secret in the same namespace.
+  "cert-manager.io/v1/certificates":
+    targetGVR: "v1/secrets"
+    fieldSelector: "metadata.name={{.metadata.name}}"
+    targetNamespace: "{{.metadata.namespace}}"
+```

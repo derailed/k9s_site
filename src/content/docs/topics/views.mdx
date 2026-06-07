@@ -1,0 +1,73 @@
+---
+title: Views & Features
+description: An overview of the special views and capabilities K9s offers beyond the standard resource browser.
+---
+
+import { Aside } from "@astrojs/starlight/components";
+
+## Overview
+
+Beyond browsing standard Kubernetes resources, K9s ships a number of special views and capabilities. Most are reachable from the command prompt (<kbd>:</kbd>) using the alias listed below, or via a key binding while in a resource view.
+
+## Pulses
+
+`:pulses` (`:pu`, `:hz`)
+
+A live cluster health dashboard rendered as a grid of gauges (pods, deployments, events, nodes, etc.). Navigate the gauges with the arrow keys or <kbd>h</kbd>/<kbd>j</kbd>/<kbd>k</kbd>/<kbd>l</kbd> and press <kbd>↵</kbd> to drill into the underlying resources.
+
+## XRay
+
+`:xray RESOURCE [NAMESPACE]`
+
+A tree view that surfaces a resource together with everything it depends on (pods, config maps, secrets, PVCs, etc.). Supported resources include `po`, `svc`, `dp`, `ds`, `sts`, and `rs`. From the tree you can filter (<kbd>/</kbd>), drill in (<kbd>↵</kbd>), edit (<kbd>e</kbd>), view logs (<kbd>l</kbd>), shell in (<kbd>s</kbd>), and more.
+
+## Workloads
+
+`:workload` (`:wk`)
+
+An aggregated, cross-kind view of your workloads with `KIND` and `READY` columns, giving you a single place to spot unhealthy resources across deployments, daemonsets, statefulsets, and friends.
+
+## Image Vulnerability Scans
+
+K9s can surface CVE/vulnerability information for your container images using a Trivy-style scanner. Enable it via `imageScans` in your [configuration](../config/). Once enabled, press <kbd>v</kbd> in a Pods/Containers view to show vulnerabilities, <kbd>Shift</kbd>+<kbd>V</kbd> to sort by them, and <kbd>↵</kbd> on a CVE to open the advisory in your browser.
+
+<Aside type="note">
+  You can exclude namespaces or workloads (by label) from scanning. See the
+  `imageScans.exclusions` block in the [configuration](../config/) docs.
+</Aside>
+
+## Port-Forwards
+
+`:pf`
+
+Lists the port-forwards active for the current K9s session. Set one up by selecting a container that exposes a port and pressing <kbd>Shift</kbd>+<kbd>F</kbd>. Port-forwards last only for the duration of the session and can be benchmarked — see [Benchmarking](../bench/).
+
+## RBAC Viewer
+
+`:rbac`, `:users`, `:groups`, and `:can`
+
+Inspect roles, cluster roles, and their bindings. The `:can` command runs an access review for a subject, for example:
+
+```text
+:can u:fred           # what can user fred do?
+:can g:developers     # what can the developers group do?
+:can s:ns:default:sa  # what can a service account do?
+```
+
+## Directory Browser
+
+`:dir PATH` (`:ls`)
+
+Browse a local directory of Kubernetes manifests, then apply, edit, or delete them without leaving K9s.
+
+## Helm
+
+`:helm` (`:hm`, `:charts`)
+
+List the Helm releases in your cluster and inspect their revision history for rollbacks.
+
+## Screen Dumps
+
+`:screendump` (`:sd`)
+
+K9s can save snapshots of resource views to disk (via <kbd>Ctrl</kbd>+<kbd>S</kbd>). The screen-dump view lists everything you have captured. The output directory is configurable via `screenDumpDir`.
