@@ -41,6 +41,11 @@ Alternatively, you can set `K9S_CONFIG_DIR` to tell K9s the directory location t
 k9s:
   # Enable periodic refresh of resource browser windows. Default false
   liveViewAutoRefresh: false
+  # Define GPU vendor resource mappings used for GPU metrics display.
+  gpuVendors:
+    nvidia:
+      vendor: nvidia
+      model: nvidia.com/gpu
   # Represents ui poll intervals in seconds. Default 2secs
   refreshRate: 2
   # Overrides the default k8s api server requests timeout. Defaults 120s
@@ -64,10 +69,22 @@ k9s:
     logoless: false
     # Set to true to hide K9s crumbs. Default false
     crumbsless: false
+    # Disable the splash screen on startup. Default false
+    splashless: false
     # Toggles reactive UI. This option provide for watching on disk artifacts changes and update the UI live  Defaults to false.
     reactive: false
     # Toggles icons display as not all terminal support these chars. Default: true
     noIcons: false
+    # Go full screen on views like logs, yaml, details. Default false
+    defaultsToFullScreen: false
+    # Invert all skin colors using Oklch lightness inversion. Default false
+    invert: false
+    # Reference the general k9s skin name. Can be overridden per context.
+    skin: default
+    # Display full GVR (group/version/resource) instead of R in views title. Default false
+    useFullGVRTitle: false
+  # Directory where k9s writes screen dumps.
+  screenDumpDir: /tmp/k9s-screens
   # Toggles whether k9s should check for the latest revision from the Github repository releases. Default is false.
   skipLatestRevCheck: false
   # Disable count pods while in node view. Default is false.
@@ -76,12 +93,29 @@ k9s:
   shellPod:
     # The shell pod image to use.
     image: busybox:1.35.0
+    # Override the shell pod entrypoint command.
+    command: []
+    # Override the shell pod command args.
+    args: []
     # The namespace to launch to shell pod into.
     namespace: default
     # The resource limit to set on the shell pod.
     limits:
       cpu: 100m
       memory: 100Mi
+    # Labels to apply to the shell pod.
+    labels: {}
+    # Image pull policy for the shell pod image (Always, IfNotPresent, Never).
+    imagePullPolicy: IfNotPresent
+    # Image pull secrets used to pull the shell pod image.
+    imagePullSecrets:
+      - name: my-registry-secret
+    # Mount host paths into the shell pod.
+    hostPathVolume:
+      - name: docker-socket
+        mountPath: /var/run/docker.sock
+        hostPath: /var/run/docker.sock
+        readOnly: true
     # Enable TTY
     tty: true
   # ImageScan config changed from v0.29.0!
@@ -108,10 +142,12 @@ k9s:
     buffer: 5000
     # Represents how far to go back in the log timeline in seconds. Setting to -1 will tail logs. Default is -1.
     sinceSeconds: 300
-    # Go full screen while displaying logs. Default false
-    fullScreen: false
     # Toggles log line wrap. Default false
     textWrap: false
+    # Disable autoscroll of the logs view. Default false
+    disableAutoscroll: false
+    # Lock column display in the logs view. Default false
+    columnLock: false
     # Toggles log line timestamp info. Default false
     showTime: false
   # Global memory/cpu thresholds. When set will alert when thresholds are met.
