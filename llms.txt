@@ -1,0 +1,27 @@
+# K9s
+
+> K9s is a terminal-based UI to interact with your Kubernetes clusters. K9s continually watches Kubernetes for changes and offers subsequent commands to interact with observed resources, aiming to simplify navigating, observing, and managing applications in the wild.
+
+## Getting Started
+
+- [Installation](https://k9scli.io/topics/install): How to install K9s on various platforms and package managers.
+
+## Usage
+
+- [Commands](https://k9scli.io/topics/commands): Built-in and resource commands available inside K9s.
+- [HotKeys](https://k9scli.io/topics/hotkeys): Configurable keyboard shortcuts for quick navigation.
+- [Aliases](https://k9scli.io/topics/aliases): Defining custom resource aliases.
+- [Configuration](https://k9scli.io/topics/config): K9s configuration file options and settings.
+- [Custom Views](https://k9scli.io/topics/columns): Customizing resource table columns.
+- [Skins](https://k9scli.io/topics/skins): Theming and customizing the K9s color scheme.
+- [Plugins](https://k9scli.io/topics/plugins): Extending K9s with custom plugin commands.
+
+## Advanced
+
+- [RBAC](https://k9scli.io/topics/rbac): Role-based access control requirements for running K9s.
+- [NodeShell](https://k9scli.io/topics/shell): Shelling into cluster nodes via K9s.
+- [Benchmarking](https://k9scli.io/topics/bench): Running load benchmarks against Kubernetes services.
+
+## Optional
+
+- [Tutorials And Demos](https://k9scli.io/topics/video): Video walkthroughs and demonstrations of K9s.
